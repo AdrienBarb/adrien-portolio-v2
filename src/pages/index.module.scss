@@ -1,0 +1,32 @@
+@import '../styles/variables.scss';
+
+.nameWrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 12rem;
+}
+
+.name {
+    font-size: 1.8rem;
+}
+
+.workTitle {
+    font-size: 1.2rem;
+}
+
+.moreInfos {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2rem;
+    color: $gray;
+    font-weight: 200;
+    transition: 0.6s color;
+}
+
+.moreInfos:hover {
+    color: $white;
+    transition: 0.6s color;
+    cursor: pointer;
+}
