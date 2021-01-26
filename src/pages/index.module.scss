@@ -30,3 +30,21 @@
     transition: 0.6s color;
     cursor: pointer;
 }
+
+.contactContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.navbar {
+    opacity: 0;
+}
+
+.description {
+    opacity: 0;
+}
+
+.contactContainer {
+    opacity: 0;
+}
