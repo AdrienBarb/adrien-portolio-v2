@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
 import '../styles/index.scss';
-import App from '../App.js'
+import Homepage from '../components/Homepage/Homepage.js'
 
 
 const index = () => {
 
   return (
-    <App />
+    <Homepage />
   )
 }
 

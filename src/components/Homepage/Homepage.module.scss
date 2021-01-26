@@ -1,4 +1,4 @@
-@import '../styles/variables.scss';
+@import '../../styles/variables.scss';
 
 .nameWrapper {
     position: absolute;
@@ -39,10 +39,19 @@
 
 .navbar {
     opacity: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .description {
     opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 12rem;
+    max-width: 560px;
+    font-size: 1.4rem;
 }
 
 .contactContainer {
