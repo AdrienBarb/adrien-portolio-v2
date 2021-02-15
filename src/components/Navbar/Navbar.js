@@ -1,14 +1,14 @@
 import React from 'react'
-import classes from './Navbar.module.scss'
+import { NavbarWrapper, NavbarStyle, Navlink } from '../../styles/navbarStyles'
 
 const Navbar = () => {
     return (
-        <div className={classes.navbarWrapper}>
-            <div className={classes.navbar}>
-                <div className={classes.navLink}>SERVICE</div>
-                <div className={classes.navLink}>RÉALISATION</div>
-            </div>
-        </div>
+        <NavbarWrapper>
+            <NavbarStyle>
+                <Navlink>SERVICE</Navlink>
+                <Navlink>RÉALISATION</Navlink>
+            </NavbarStyle>
+        </NavbarWrapper>
     )
 }
 

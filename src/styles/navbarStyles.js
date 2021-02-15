@@ -1,21 +1,22 @@
-.navbarWrapper {
+ import styled from 'styled-components'
+
+ export const NavbarWrapper = styled.div`
     position: fixed;
     top: 0;
     width: 100%;
     padding: 1.6rem 2rem;
     z-index: 1000;
     box-sizing: border-box;
-}
+ `
 
-.navbar {
-    max-width: 1200px;
-    width: fit-content;
+ export const NavbarStyle = styled.div`
+    width: auto;
     margin: 0 auto;
     display: flex;
     align-items: center;
     float: right;
-}
+`
 
-.navLink {
+export const Navlink = styled.div`
     margin-left: 1rem;
-}
+`

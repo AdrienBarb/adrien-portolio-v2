@@ -41,14 +41,11 @@ const Homepage = () => {
           <Navbar />
         </div>
         <Layout>
-          <div className={classes.nameWrapper}>
-            <div className={classes.name}>ADRIEN BARBIER</div>
-            <div className={classes.workTitle}>Développeur web freelance</div>
-          </div>
           <div ref={description} className='fadeIn' className={classes.description}>
+            <div className={classes.workTitle}>Développeur web freelance</div>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
           </div>
-          <div  className={classes.moreInfos}>(en savoir plus)</div>
+          <div className={classes.moreInfos}>(en savoir plus)</div>
         </Layout>
         <div ref={sectionRef} >
             <div ref={contact} className={classes.contactContainer}>
