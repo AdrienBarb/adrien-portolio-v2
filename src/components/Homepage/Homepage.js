@@ -6,12 +6,14 @@ import Contact from '../Contact/Contact'
 import { useIntersection } from "react-use";
 import gsap from "gsap";
 import { useGlobalStateContext, useGlobalDispatchContext } from '../../context/globalContext'
+import { MainSection, NavbarWrapper, Description, MoreInfos } from '../../styles/homePageStyles'
 
 const Homepage = () => {
     const sectionRef = useRef(null);
     const description = useRef(null);
     const contact = useRef(null);
     const nav = useRef(null);
+    const knowMore = useRef(null)
     const dispatch = useGlobalDispatchContext()
     const { currentTheme } = useGlobalStateContext()
 
@@ -30,13 +32,15 @@ const Homepage = () => {
     });
   
     const fadeIn = (description, contact, nav) => {
-      gsap.to(description.current, 1, { opacity: 1, y: 0, ease: "power4.out", })
+      gsap.to(description.current, 1, { opacity: 0, y: 0, ease: "power4.out", })
+      gsap.to(knowMore.current, 1, { opacity: 0, y: 0, ease: "power4.out", })
       gsap.to(contact.current, 1, { opacity: 1, y: 0, ease: "power4.out", })
       gsap.to(nav.current, 1, { opacity: 1, y: 0, ease: "power4.out", })
     }
   
     const fadeOut = (description, contact, nav) => {
-      gsap.to(description.current, 1, { opacity: 0, y: -20, ease: "power4.out", })
+      gsap.to(description.current, 1, { opacity: 1, y: 0, ease: "power4.out", })
+      gsap.to(knowMore.current, 1, { opacity: 1, y: 0, ease: "power4.out", })
       gsap.to(contact.current, 1, { opacity: 0, y: -20, ease: "power4.out", })
       gsap.to(nav.current, 1, { opacity: 0, y: -20, ease: "power4.out", })
     }
@@ -46,17 +50,17 @@ const Homepage = () => {
         : fadeIn(description, contact, nav)
   
     return (
-      <>
-        <div ref={nav} className={classes.navbar}>
+      <Layout>
+        <NavbarWrapper ref={nav}>
           <Navbar />
-        </div>
-        <Layout>
-          <div ref={description} className='fadeIn' className={classes.description}>
-            <div className={classes.workTitle} onClick={toggleTheme}>Développeur web freelance</div>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-          </div>
-          <div className={classes.moreInfos}>(en savoir plus)</div>
-        </Layout>
+        </NavbarWrapper>
+        <MainSection>
+          <Description ref={description} >
+            <h1 className={classes.workTitle} onClick={toggleTheme}>Développeur web freelance</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          </Description>
+          <MoreInfos ref={knowMore}>(en savoir plus)</MoreInfos>
+        </MainSection>
         <div ref={sectionRef} >
             <div ref={contact} className={classes.contactContainer}>
                 <Contact  title={'EMAIL'} info={'adrien-barbier@hotmail.fr'}/>
@@ -64,7 +68,7 @@ const Homepage = () => {
                 <Contact  title={'SOCIAL'} info={'Linkedin'}/>
             </div>
         </div>
-      </>
+      </Layout>
     )
 }
 

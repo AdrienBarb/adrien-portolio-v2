@@ -1,4 +1,3 @@
-
 .nameWrapper {
     position: absolute;
     top: 50%;
@@ -14,19 +13,6 @@
     font-size: 1.2rem;
 }
 
-.moreInfos {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 2rem;
-    font-weight: 200;
-    transition: 0.6s color;
-}
-
-.moreInfos:hover {
-    transition: 0.6s color;
-    cursor: pointer;
-}
 
 .contactContainer {
     display: flex;
@@ -34,22 +20,6 @@
     justify-content: space-around;
 }
 
-.navbar {
-    opacity: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.description {
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-left: 12rem;
-    max-width: 560px;
-    font-size: 1.4rem;
-}
 
 .contactContainer {
     opacity: 0;
