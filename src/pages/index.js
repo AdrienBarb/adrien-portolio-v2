@@ -1,5 +1,4 @@
-import React, { useRef } from 'react'
-import '../styles/index.scss';
+import React from 'react'
 import Homepage from '../components/Homepage/Homepage.js'
 
 

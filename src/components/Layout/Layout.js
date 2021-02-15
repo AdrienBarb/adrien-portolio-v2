@@ -1,39 +1,26 @@
 import React from 'react'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { normalize } from "styled-normalize"
+import { ThemeProvider } from 'styled-components'
+import { useGlobalStateContext } from '../../context/globalContext'
+import { GlobalStyle } from '../../styles/globalStyles'
 
-const GlobalStyle = createGlobalStyle`
-    ${normalize}
-    * {
-        text-decoration: none;
-    }
-
-    html {
-        box-sizing: border-box;
-        font-size: 16px;
-    }
-
-    body {
-        background: ${props => props.theme.background};
-        color: ${props => props.theme.text};
-        font-family: 'Roboto mono';
-        overflow-x: hidden;
-    }
-`
 
 const darkTheme = {
     background: '#121212',
-    text: '#fff'
+    text: '#fff',
+    gray: '#595E5F'
 }
 
 const lightTheme = {
     background: '#fff',
-    text: '#121212'
+    text: '#121212',
+    gray: '#595E5F'
 }
 
 const Layout = ({ children }) => {
+    const { currentTheme } = useGlobalStateContext()
+
     return (
-        <ThemeProvider theme={darkTheme}>
+        <ThemeProvider theme={currentTheme === 'dark' ? darkTheme : lightTheme}>
             <GlobalStyle />
             <main>{children}</main>
         </ThemeProvider>
@@ -41,3 +28,8 @@ const Layout = ({ children }) => {
 }
 
 export default Layout
+
+
+// $bs: 1024px;
+// $ms: 768px;
+// $sm: 425px;

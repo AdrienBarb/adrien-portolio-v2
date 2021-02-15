@@ -5,13 +5,23 @@ import Navbar from '../Navbar/Navbar'
 import Contact from '../Contact/Contact'
 import { useIntersection } from "react-use";
 import gsap from "gsap";
+import { useGlobalStateContext, useGlobalDispatchContext } from '../../context/globalContext'
 
 const Homepage = () => {
     const sectionRef = useRef(null);
     const description = useRef(null);
     const contact = useRef(null);
     const nav = useRef(null);
+    const dispatch = useGlobalDispatchContext()
+    const { currentTheme } = useGlobalStateContext()
 
+    const toggleTheme = () => {
+      if (currentTheme === 'dark') {
+        dispatch({ type: 'TOGGLE_THEME', theme: 'light' })
+      } else {
+        dispatch({ type: 'TOGGLE_THEME', theme: 'dark' })
+      }
+    }
 
     const intersection = useIntersection(sectionRef, {
       root: null,
@@ -42,7 +52,7 @@ const Homepage = () => {
         </div>
         <Layout>
           <div ref={description} className='fadeIn' className={classes.description}>
-            <div className={classes.workTitle}>Développeur web freelance</div>
+            <div className={classes.workTitle} onClick={toggleTheme}>Développeur web freelance</div>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
           </div>
           <div className={classes.moreInfos}>(en savoir plus)</div>
