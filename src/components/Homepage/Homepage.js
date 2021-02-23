@@ -32,9 +32,9 @@ const Homepage = () => {
     });
   
     const fadeIn = (description, contact, nav) => {
-      gsap.to(description.current, 1, { opacity: 0, y: 0, ease: "power4.out", })
-      gsap.to(knowMore.current, 1, { opacity: 0, y: 0, ease: "power4.out", })
-      gsap.to(contact.current, 1, { opacity: 1, y: 0, ease: "power4.out", })
+      gsap.to(description.current, 1, { opacity: 0, y: -20, ease: "power4.out", })
+      gsap.to(knowMore.current, 1, { opacity: 0, y: -20, ease: "power4.out", })
+      gsap.to(contact.current, 1, { opacity: 1, y: -20, ease: "power4.out", })
       gsap.to(nav.current, 1, { opacity: 1, y: 0, ease: "power4.out", })
     }
   
@@ -46,8 +46,8 @@ const Homepage = () => {
     }
 
     intersection && intersection.intersectionRatio < 1
-        ? fadeOut(description, contact, nav)
-        : fadeIn(description, contact, nav)
+        ? fadeOut(description, contact, nav, knowMore)
+        : fadeIn(description, contact, nav, knowMore)
   
     return (
       <Layout>
