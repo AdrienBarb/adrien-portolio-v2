@@ -20,17 +20,35 @@ export const Description = styled.div`
     transform: translateY(-50%);
     margin-left: 12rem;
     max-width: 560px;
+    width: 100%;
+    box-sizing: border-box;
+    @media (max-width: 1024px) {
+        transform: translateY(0%);
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        left: 50%;
+    }
+    @media (max-width: 425px) {
+        padding: 0 1rem;
+    }
 
     h1 {
         font-size: 1.8rem;
         font-weight: 600;
         position: relative;
         margin-bottom: 0;
+        @media (max-width: 425px) {
+            font-size: 1.4rem;
+        }
     }
 
     p {
         font-size: 1.2rem;
         line-height: 1.4;
+        @media (max-width: 425px) {
+            font-size: 1rem;
+        }
+
     }
 `
 
@@ -75,4 +93,6 @@ export const ContactWrapperStyle = styled.div`
     justify-content: space-between;
     box-sizing: border-box;
     padding: 0 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 `

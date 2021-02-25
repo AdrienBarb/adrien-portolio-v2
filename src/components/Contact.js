@@ -1,11 +1,12 @@
 import React from 'react'
+import { StyledContact } from '../styles/contactStyles'
 
 const Contact = (props) => {
     return (
-        <div>
-            <div>{props.title}</div>
-            <div>{props.info}</div>
-        </div>
+        <StyledContact>
+            <h1>{props.title}</h1>
+            <p>{props.info}</p>
+        </StyledContact>
     )
 }
 

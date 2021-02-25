@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { normalize } from "styled-normalize"
 
 export const GlobalStyle = createGlobalStyle`
@@ -23,4 +23,9 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
         color: inherit;
     }
+`
+
+export const StyledLayout = styled.div`
+    max-width: 1400px;
+    margin: 0 auto;
 `
