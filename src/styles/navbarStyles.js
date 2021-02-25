@@ -19,4 +19,8 @@
 
 export const Navlink = styled.div`
     margin-left: 1rem;
+
+    a {
+        cursor: pointer;
+    }
 `
