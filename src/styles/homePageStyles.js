@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from "framer-motion"
 
 export const MainSection = styled.div`
     height: 100vh;
@@ -23,12 +24,18 @@ export const Description = styled.div`
     h1 {
         font-size: 1.8rem;
         font-weight: 600;
+        position: relative;
+        margin-bottom: 0;
     }
 
     p {
         font-size: 1.2rem;
         line-height: 1.4;
     }
+`
+
+export const Title = styled.div`
+    display: flex;
 `
 
 export const MoreInfos = styled.div`
@@ -44,4 +51,28 @@ export const MoreInfos = styled.div`
         cursor: pointer;
         color: ${props => props.theme.gray};
     }
+`
+
+export const Dot = styled(motion.div)`
+    display: block;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: ${props => props.theme.text};
+    border-radius: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    right: 114px;
+    cursor: pointer;
+`
+
+export const Letter = styled.span`
+    color: ${props => props.change ? props.theme.background : props.theme.text};
+`
+
+export const ContactWrapperStyle = styled.div`
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 2rem;
 `

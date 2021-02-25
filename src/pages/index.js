@@ -1,5 +1,5 @@
 import React from 'react'
-import Homepage from '../components/Homepage/Homepage.js'
+import Homepage from '../components/Homepage'
 
 
 const index = () => {

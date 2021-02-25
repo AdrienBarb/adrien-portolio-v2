@@ -1,14 +1,14 @@
-import React, { useRef } from 'react'
-import classes from './Homepage.module.scss'
-import Layout from '../Layout/Layout'
-import Navbar from '../Navbar/Navbar'
-import Contact from '../Contact/Contact'
+import React, { useRef, useState } from 'react'
+import Layout from './Layout'
+import Navbar from './Navbar'
+import Contact from './Contact'
 import { useIntersection } from "react-use";
 import gsap from "gsap";
-import { useGlobalStateContext, useGlobalDispatchContext } from '../../context/globalContext'
-import { MainSection, NavbarWrapper, Description, MoreInfos } from '../../styles/homePageStyles'
+import { useGlobalStateContext, useGlobalDispatchContext } from '../context/globalContext'
+import { MainSection, NavbarWrapper, Description, MoreInfos, Letter, ContactWrapperStyle } from '../styles/homePageStyles'
 
 const Homepage = () => {
+    const [change, setChange] = useState(false)
     const sectionRef = useRef(null);
     const description = useRef(null);
     const contact = useRef(null);
@@ -30,7 +30,8 @@ const Homepage = () => {
       rootMargin: '0px',
       threshold: 1
     });
-  
+
+    
     const fadeIn = (description, contact, nav) => {
       gsap.to(description.current, 1, { opacity: 0, y: -20, ease: "power4.out", })
       gsap.to(knowMore.current, 1, { opacity: 0, y: -20, ease: "power4.out", })
@@ -56,17 +57,33 @@ const Homepage = () => {
         </NavbarWrapper>
         <MainSection>
           <Description ref={description} >
-            <h1 className={classes.workTitle} onClick={toggleTheme}>Développeur web freelance</h1>
+            <h1  >
+              
+              Dével<Letter change={change}>o</Letter>ppeur web freelance
+              {/* <Dot   
+                onClick={toggleTheme}        
+                transition={{
+                  delay: 3,
+                  duration: 0.6,
+                  yoyo: Infinity,
+                  ease: "easeOut",
+                  repeatDelay: 3
+                  }}
+                animate={{ 
+                  scale: [1, 2, 1]
+                }} 
+              /> */}
+            </h1>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
           </Description>
           <MoreInfos ref={knowMore}>(en savoir plus)</MoreInfos>
         </MainSection>
         <div ref={sectionRef} >
-            <div ref={contact} className={classes.contactContainer}>
-                <Contact  title={'EMAIL'} info={'adrien-barbier@hotmail.fr'}/>
-                <Contact  title={'TÉLÉPHONE'} info={'+33 6 79 09 38 18'}/>
-                <Contact  title={'SOCIAL'} info={'Linkedin'}/>
-            </div>
+            <ContactWrapperStyle ref={contact} >
+                <Contact title={'EMAIL'} info={'adrien-barbier@hotmail.fr'}/>
+                <Contact title={'TÉLÉPHONE'} info={'+33 6 79 09 38 18'}/>
+                <Contact title={'SOCIAL'} info={'Linkedin'}/>
+            </ContactWrapperStyle>
         </div>
       </Layout>
     )
