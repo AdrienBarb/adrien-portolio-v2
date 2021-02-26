@@ -67,19 +67,6 @@ const Homepage = () => {
         <Description ref={description}>
           <h1>
             Dével<Letter change={change}>o</Letter>ppeur web freelance
-            {/* <Dot   
-                onClick={toggleTheme}        
-                transition={{
-                  delay: 3,
-                  duration: 0.6,
-                  yoyo: Infinity,
-                  ease: "easeOut",
-                  repeatDelay: 3
-                  }}
-                animate={{ 
-                  scale: [1, 2, 1]
-                }} 
-              /> */}
           </h1>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
