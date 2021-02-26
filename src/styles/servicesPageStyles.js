@@ -11,4 +11,14 @@ export const StyledServicesWrapper = styled.div`
     grid-gap: 4rem;
     max-width: 1200px;
     width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        position: relative;
+        margin: 10rem auto 0 auto;
+        transform: none;
+        top: 0;
+        left: 0;
+    }
 `
