@@ -38,7 +38,7 @@ export const Description = styled.div`
         position: relative;
         margin-bottom: 0;
         @media (max-width: 425px) {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
         }
     }
 
@@ -60,15 +60,10 @@ export const MoreInfos = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 2rem;
+    bottom: 1.2rem;
     font-weight: 200;
     transition: 0.6s color;
     color: ${props => props.theme.text};
-    &:hover {
-        transition: 0.6s color;
-        cursor: pointer;
-        color: ${props => props.theme.gray};
-    }
 `
 
 export const Dot = styled(motion.div)`
@@ -88,11 +83,3 @@ export const Letter = styled.span`
     color: ${props => props.change ? props.theme.background : props.theme.text};
 `
 
-export const ContactWrapperStyle = styled.div`
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding: 0 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-`

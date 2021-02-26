@@ -14,7 +14,6 @@ import {
   Description,
   MoreInfos,
   Letter,
-  ContactWrapperStyle,
 } from '../styles/homePageStyles'
 
 const Homepage = () => {
@@ -89,14 +88,12 @@ const Homepage = () => {
             and scrambled it to make a type specimen book.
           </p>
         </Description>
-        <MoreInfos ref={knowMore}>(en savoir plus)</MoreInfos>
+        <MoreInfos ref={knowMore}>(scroll down)</MoreInfos>
       </MainSection>
       <div ref={sectionRef}>
-        <ContactWrapperStyle ref={contact}>
-          <Contact title={'EMAIL'} info={'adrien-barbier@hotmail.fr'} />
-          <Contact title={'TÉLÉPHONE'} info={'+33 6 79 09 38 18'} />
-          <Contact title={'SOCIAL'} info={'Linkedin'} />
-        </ContactWrapperStyle>
+        <div ref={contact}>
+          <Contact />
+        </div>
       </div>
     </Layout>
   )
