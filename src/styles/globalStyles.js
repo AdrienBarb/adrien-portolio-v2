@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
         background: ${props => props.theme.background};
         color: ${props => props.theme.text};
         overflow-x: hidden;
+        font-family: 'Roboto Mono';
     }
 
     a {
