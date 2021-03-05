@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Navbar from '../components/Navbar'
+import ProjectNavigation from '../components/ProjectNavigation'
 import {
   StyledProject,
   StyledProjectWrapper,
@@ -9,9 +10,10 @@ import {
   StyledProjectNavigation,
 } from '../styles/projectStyles'
 
-const project = ({ pageContext }) => {
-  const { article } = pageContext
-  console.log(article)
+const Project = ({ pageContext }) => {
+  const { article, prev, next } = pageContext
+
+  console.log(prev, next)
 
   return (
     <Layout>
@@ -24,22 +26,14 @@ const project = ({ pageContext }) => {
             <p>{article.description}</p>
             <a href={article.lien}>Visiter le site</a>
           </StyledProjectDescription>
-          <video autoPlay loop src={article.projectVideo.file.url} />
+          {article.projectVideo && (
+            <video autoPlay loop src={article.projectVideo.file.url} />
+          )}
         </StyledProject>
       </StyledProjectWrapper>
-      <StyledProjectNavigationWrapper>
-        <StyledProjectNavigation>
-            <h1>Précedent</h1>
-            <a href="">Titre</a>
-        </StyledProjectNavigation>
-
-        <StyledProjectNavigation>
-            <h1>Suivant</h1>
-            <a href="">Titre</a>
-        </StyledProjectNavigation>
-      </StyledProjectNavigationWrapper>
+      <ProjectNavigation prev={prev} next={next}/>
     </Layout>
   )
 }
 
-export default project
+export default Project

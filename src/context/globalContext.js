@@ -1,4 +1,5 @@
 import React, { createContext, useReducer, useContext } from 'react'
+import { graphql, useStaticQuery } from 'gatsby';
 
  const GlobalStateContext = createContext()
  const GlobalDispatchContext = createContext()
@@ -18,8 +19,27 @@ import React, { createContext, useReducer, useContext } from 'react'
  }
 
  export const GlobalProvider = ({children}) => {
+        const data = useStaticQuery(graphql`
+        query {
+        allContentfulProject (
+            sort: {
+            fields: [updatedAt]
+            order: DESC
+            }
+        ) {
+            edges {
+            node {
+                title
+                slug
+            }
+            }
+        }
+        }
+    `)
+
      const [state, dispatch] = useReducer(globalReducer, {
-         currentTheme: 'dark'
+         currentTheme: 'dark', 
+         dataTest: data.allContentfulProject.edges
      })
 
      return (
