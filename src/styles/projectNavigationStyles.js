@@ -12,10 +12,11 @@ export const StyledProjectNavigationWrapper = styled.div`
 export const StyledProjectNavigation = styled.div`
   padding: 1rem;
   text-align: ${(props) => (props.left ? 'left' : '')};
+  color: ${(props) => props.theme.background};
 
   h1 {
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
     color: ${(props) => props.theme.background};
   }
 
@@ -33,4 +34,14 @@ export const StyledProjectNavigationContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+`
+
+export const NavProjectIconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  a {
+    margin-right: ${(props) => (props.prev ? '.4rem' : '')};
+    margin-left: ${(props) => (props.next ? '.4rem' : '')};
+  }
 `

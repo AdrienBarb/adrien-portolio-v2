@@ -13,8 +13,6 @@ import {
 const Project = ({ pageContext }) => {
   const { article, prev, next } = pageContext
 
-  console.log(prev, next)
-
   return (
     <Layout>
       <Navbar />
