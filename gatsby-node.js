@@ -11,6 +11,10 @@ exports.createPages = async ({ graphql, actions }) => {
                     node {
                         title
                         slug
+                        description {
+                          description
+                        }
+                        website
                         projectVideo {
                           id
                           file {
@@ -29,9 +33,10 @@ exports.createPages = async ({ graphql, actions }) => {
         }
   `);
 
-  const projects = queryResults.data.allContentfulProject.edges
+  
 
   queryResults.data?.allContentfulProject.edges.forEach(({ node }, index) => {
+    const projects = queryResults.data.allContentfulProject.edges
     createPage({
       path: node.slug,
       component: path.resolve(`./src/templates/project.js`),

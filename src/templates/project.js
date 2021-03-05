@@ -23,8 +23,8 @@ const Project = ({ pageContext }) => {
         <StyledProject>
           <StyledProjectDescription>
             <h1>{article.title}</h1>
-            <p>{article.description}</p>
-            <a href={article.lien}>Visiter le site</a>
+            <p>{article.description?.description}</p>
+            <a href={article.website} target="_blank">Visiter le site</a>
           </StyledProjectDescription>
           {article.projectVideo && (
             <video autoPlay loop src={article.projectVideo.file.url} />
