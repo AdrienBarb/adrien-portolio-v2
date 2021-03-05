@@ -11,6 +11,18 @@ exports.createPages = async ({ graphql, actions }) => {
                     node {
                         title
                         slug
+                        projectVideo {
+                          id
+                          file {
+                            url
+                          }
+                          fluid {
+                            base64
+                            tracedSVG
+                            srcWebp
+                            srcSetWebp
+                          }
+                        }
                     }
                 }
             }
@@ -18,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
 
-  queryResults.data.allContentfulProject.edges.forEach(({ node }) => {
+  queryResults.data?.allContentfulProject.edges.forEach(({ node }) => {
     createPage({
       path: node.slug,
       component: path.resolve(`./src/templates/project.js`),
