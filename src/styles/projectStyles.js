@@ -10,15 +10,31 @@ export const StyledProject = styled.div`
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
 
   video {
-    max-width: 900px;
-    margin-left: 1rem;
+    width: 100%;
+    height: auto;
+    @media (max-width: 1024px) {
+      margin: 0;
+    }
   }
+`
+
+export const StyledVideoWrapper = styled.div`
+  max-width: 900px;
+  margin-right: 2rem;
 `
 
 export const StyledProjectDescription = styled.div`
   max-width: 218px;
+  @media (max-width: 1024px) {
+    max-width: 900px;
+    margin-top: 2rem;
+  }
 
   h1 {
     margin-top: 0;
@@ -41,5 +57,6 @@ export const StyledProjectDescription = styled.div`
     }
   }
 `
+
 
 

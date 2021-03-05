@@ -6,7 +6,7 @@ export const StyledFullnavWrapper = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: white;
+    background-color: black;
     z-index: 0;
     visibility: hidden;
     opacity: 0;
@@ -26,7 +26,7 @@ export const StyledFullnav = styled.div`
     a {
         font-size: 3rem;
         margin: 1.2rem 0;
-        color: black;
+        color: white;
     }
 `
 
@@ -34,5 +34,5 @@ export const StyledHumburger = styled.div`
   position: relative;
   z-index: 40000 !important;
   transform: translateX(+12px);
-  color: black;
+  color: ${props => props.theme.text};
 `

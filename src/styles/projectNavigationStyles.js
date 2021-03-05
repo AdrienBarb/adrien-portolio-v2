@@ -4,7 +4,7 @@ export const StyledProjectNavigationWrapper = styled.div`
   background-color: ${(props) => props.theme.text};
   width: 100%;
 
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
 `
