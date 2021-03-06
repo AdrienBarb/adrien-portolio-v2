@@ -75,7 +75,7 @@ const Homepage = () => {
             and scrambled it to make a type specimen book.
           </p>
         </Description>
-        <MoreInfos ref={knowMore}>(scroll down)</MoreInfos>
+        <MoreInfos ref={knowMore}>(scrollez vers le bas)</MoreInfos>
       </MainSection>
       <div ref={sectionRef}>
         <div ref={contact}>

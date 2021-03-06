@@ -11,7 +11,7 @@ export const StyledServicesWrapper = styled.div`
   grid-gap: 4rem;
   max-width: 1200px;
   width: 100%;
-  padding: 0 1rem;
+  padding: 1rem;
   box-sizing: border-box;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;

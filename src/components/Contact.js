@@ -11,29 +11,29 @@ const Contact = () => {
   console.log(matches)
 
   const email = matches ? (
-    <FontAwesomeIcon className="social-icon" icon={faEnvelope} />
+    <a href="mailto:adrien-barbier@hotmail.fr" target="_blank"><FontAwesomeIcon className="social-icon" icon={faEnvelope} /></a>
   ) : (
     <StyledContact>
       <h1>EMAIL</h1>
-      <a>adrien-barbier@hotmail.fr</a>
+      <a href="mailto:adrien-barbier@hotmail.fr" target="_blank">adrien-barbier@hotmail.fr</a>
     </StyledContact>
   )
 
   const phone = matches ? (
-    <FontAwesomeIcon className="social-icon" icon={faPhone} />
+    <a href="tel:+33679093818" target="_blank"><FontAwesomeIcon className="social-icon" icon={faPhone} /></a>
   ) : (
     <StyledContact>
       <h1>TELEPHONE</h1>
-      <a>06 79 09 38 18</a>
+      <a href="tel:+33679093818" target="_blank">06 79 09 38 18</a>
     </StyledContact>
   )
 
   const linkedin = matches ? (
-    <FontAwesomeIcon className="social-icon" icon={faLinkedinIn} />
+    <a href="https://www.linkedin.com/in/adrien-barbier-5b479598/" target="_blank"><FontAwesomeIcon className="social-icon" icon={faLinkedinIn} /></a>
   ) : (
     <StyledContact>
       <h1>SOCIAL</h1>
-      <a>Linkedin</a>
+      <a href="https://www.linkedin.com/in/adrien-barbier-5b479598/" target="_blank">Linkedin</a>
     </StyledContact>
   )
 
@@ -42,7 +42,6 @@ const Contact = () => {
         {email}
         {phone}
         {linkedin}
-
     </StyledContactWrapper>
   )
 }

@@ -7,10 +7,11 @@ export const StyledFullnavWrapper = styled.div`
     left: 0;
     right: 0;
     background-color: black;
-    z-index: 0;
     visibility: hidden;
     opacity: 0;
     z-index: 10000;
+    height: 100vh;
+    overflow-y: hidden;
 `
 
 export const StyledFullnav = styled.div`

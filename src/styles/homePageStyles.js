@@ -61,7 +61,8 @@ export const MoreInfos = styled.div`
   bottom: 1.2rem;
   font-weight: 200;
   transition: 0.6s color;
-  color: ${(props) => props.theme.text};
+  white-space: nowrap;
+  color: ${(props) => props.theme.gray};
 `
 
 
