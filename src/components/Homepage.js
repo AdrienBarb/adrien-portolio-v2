@@ -10,12 +10,12 @@ import {
 } from '../context/globalContext'
 import {
   MainSection,
-  NavbarWrapper,
   Description,
   MoreInfos,
   Letter,
 } from '../styles/homePageStyles'
 import IntroOverlay from './IntroOverlay'
+import useKonamiCode from './Konami'
 
 const Homepage = () => {
   const [change, setChange] = useState(false)
@@ -27,8 +27,9 @@ const Homepage = () => {
   const overlay = useRef(null)
   const dispatch = useGlobalDispatchContext()
   const { currentTheme } = useGlobalStateContext()
+  const [konamiCode] = useKonamiCode()
 
-  console.log(overlay)
+  console.log(konamiCode)
 
   useEffect(() => {
     gsap.to('body', 0, { css: { visibility: 'visible' } })
@@ -46,13 +47,17 @@ const Homepage = () => {
     })
   }, [])
 
-  const toggleTheme = () => {
-    if (currentTheme === 'dark') {
-      dispatch({ type: 'TOGGLE_THEME', theme: 'light' })
-    } else {
-      dispatch({ type: 'TOGGLE_THEME', theme: 'dark' })
+
+  useEffect(() => {
+    if(konamiCode) {
+      if (currentTheme === 'dark') {
+        dispatch({ type: 'TOGGLE_THEME', theme: 'light' })
+      } else {
+        dispatch({ type: 'TOGGLE_THEME', theme: 'dark' })
+      }
     }
-  }
+
+  }, [konamiCode])
 
   const intersection = useIntersection(sectionRef, {
     root: null,
@@ -81,9 +86,9 @@ const Homepage = () => {
   return (
     <Layout>
       <IntroOverlay overlay={overlay} />
-      
-        <Navbar nav={nav} />
-      
+
+      <Navbar nav={nav} />
+
       <MainSection>
         <Description ref={description}>
           <h1>

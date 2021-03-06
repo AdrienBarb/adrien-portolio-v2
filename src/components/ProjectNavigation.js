@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { Link } from 'gatsby'
 
 const ProjectNavigation = ({ prev, next }) => {
   const matches = useMediaQuery('(min-width:768px)')
@@ -20,12 +21,12 @@ const ProjectNavigation = ({ prev, next }) => {
           {matches ? (
             <>
               <h1>{prev && prev.title}</h1>
-              <a href={`/${prev?.slug}`}>{prev && 'Précedent'}</a>
+              <Link to={`/${prev?.slug}`}>{prev && 'Précedent'}</Link>
             </>
           ) : (
             <NavProjectIconWrapper prev>
               {prev && (
-                <a href={`/${prev?.slug}`}><FontAwesomeIcon className="social-icon" icon={faChevronLeft} /></a>
+                <Link to={`/${prev?.slug}`}><FontAwesomeIcon className="social-icon" icon={faChevronLeft} /></Link>
               )}
               <h1>{prev && prev.title}</h1>
             </NavProjectIconWrapper>
@@ -36,13 +37,13 @@ const ProjectNavigation = ({ prev, next }) => {
           {matches ? (
             <>
               <h1>{next && next?.title}</h1>
-              <a href={`/${next?.slug}`}>{next && 'Suivant'}</a>
+              <Link to={`/${next?.slug}`}>{next && 'Suivant'}</Link>
             </>
           ) : (
             <NavProjectIconWrapper next>
               <h1>{next && next?.title}</h1>
               {next && (
-                <a href={`/${next?.slug}`}><FontAwesomeIcon className="social-icon" icon={faChevronRight} /></a>
+                <Link to={`/${next?.slug}`}><FontAwesomeIcon className="social-icon" icon={faChevronRight} /></Link>
               )}
             </NavProjectIconWrapper>
           )}

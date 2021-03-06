@@ -11,7 +11,6 @@ import Fullnav from './Fullnav'
 const Navbar = ({nav}) => {
   const matches = useMediaQuery('(min-width:768px)')
 
-  console.log(matches)
   return (
     <NavbarWrapper ref={nav}>
       <NavbarStyle>

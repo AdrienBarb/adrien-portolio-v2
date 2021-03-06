@@ -11,7 +11,7 @@ export const StyledIntroOverlay = styled.div`
     position: absolute;
     height: 33.333vh;
     width: 100%;
-    background-color: white;
+    background-color: ${props => props.theme.text};
     top: 0;
     left: 0;
     &:nth-child(2) {
@@ -22,3 +22,4 @@ export const StyledIntroOverlay = styled.div`
     }
   }
 `
+

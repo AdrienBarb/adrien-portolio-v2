@@ -5,13 +5,6 @@ export const MainSection = styled.div`
   width: 100%;
 `
 
-export const NavbarWrapper = styled.div`
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-`
-
 export const Description = styled.div`
   opacity: 1;
   position: absolute;

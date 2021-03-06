@@ -8,8 +8,6 @@ import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 const Contact = () => {
   const matches = useMediaQuery('(max-width:768px)')
 
-  console.log(matches)
-
   const email = matches ? (
     <a href="mailto:adrien-barbier@hotmail.fr" target="_blank"><FontAwesomeIcon className="social-icon" icon={faEnvelope} /></a>
   ) : (
