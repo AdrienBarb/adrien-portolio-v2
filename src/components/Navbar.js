@@ -8,12 +8,12 @@ import { Link } from 'gatsby'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Fullnav from './Fullnav'
 
-const Navbar = () => {
+const Navbar = ({nav}) => {
   const matches = useMediaQuery('(min-width:768px)')
 
   console.log(matches)
   return (
-    <NavbarWrapper>
+    <NavbarWrapper ref={nav}>
       <NavbarStyle>
         <Link to="/">ADRIEN BARBIER</Link>
         {matches ? (

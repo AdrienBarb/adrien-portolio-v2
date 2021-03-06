@@ -41,8 +41,8 @@ const Homepage = () => {
       stagger: 0.4,
     }).to(overlay.current, 0, {
       css: {
-        display: 'none'
-      }
+        display: 'none',
+      },
     })
   }, [])
 
@@ -81,9 +81,9 @@ const Homepage = () => {
   return (
     <Layout>
       <IntroOverlay overlay={overlay} />
-      <NavbarWrapper ref={nav}>
-        <Navbar />
-      </NavbarWrapper>
+      
+        <Navbar nav={nav} />
+      
       <MainSection>
         <Description ref={description}>
           <h1>
