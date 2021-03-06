@@ -31,8 +31,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  queryResults.data?.allContentfulProject.edges.forEach((node, index) => {
-    const projects = queryResults.data.allContentfulProject.edges
+  const projects = queryResults.data.allContentfulProject.edges
+  queryResults.data.allContentfulProject.edges.forEach((node, index) => {
     createPage({
       path: node.node.slug,
       component: path.resolve(`./src/templates/project.js`),
