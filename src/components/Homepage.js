@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import Layout from './Layout'
 import Navbar from './Navbar'
 import Contact from './Contact'
@@ -15,6 +15,7 @@ import {
   MoreInfos,
   Letter,
 } from '../styles/homePageStyles'
+import IntroOverlay from './IntroOverlay'
 
 const Homepage = () => {
   const [change, setChange] = useState(false)
@@ -23,8 +24,27 @@ const Homepage = () => {
   const contact = useRef(null)
   const nav = useRef(null)
   const knowMore = useRef(null)
+  const overlay = useRef(null)
   const dispatch = useGlobalDispatchContext()
   const { currentTheme } = useGlobalStateContext()
+
+  console.log(overlay)
+
+  useEffect(() => {
+    gsap.to('body', 0, { css: { visibility: 'visible' } })
+
+    const t1 = gsap.timeline()
+
+    t1.to('.overlay', 1.6, {
+      width: 0,
+      ease: 'expo.inOut',
+      stagger: 0.4,
+    }).to(overlay.current, 0, {
+      css: {
+        display: 'none'
+      }
+    })
+  }, [])
 
   const toggleTheme = () => {
     if (currentTheme === 'dark') {
@@ -60,6 +80,7 @@ const Homepage = () => {
 
   return (
     <Layout>
+      <IntroOverlay overlay={overlay} />
       <NavbarWrapper ref={nav}>
         <Navbar />
       </NavbarWrapper>
