@@ -1,39 +1,35 @@
-const path = require("path")
-
-
+const path = require('path')
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const queryResults = await graphql(`
-        query {
-            allContentfulProject  {
-                edges {
-                    node {
-                        title
-                        slug
-                        description {
-                          description
-                        }
-                        website
-                        projectVideo {
-                          id
-                          file {
-                            url
-                          }
-                          fluid {
-                            base64
-                            tracedSVG
-                            srcWebp
-                            srcSetWebp
-                          }
-                        }
-                    }
-                }
+    query {
+      allContentfulProject {
+        edges {
+          node {
+            title
+            slug
+            description {
+              description
             }
+            website
+            projectVideo {
+              id
+              file {
+                url
+              }
+              fluid {
+                base64
+                tracedSVG
+                srcWebp
+                srcSetWebp
+              }
+            }
+          }
         }
-  `);
-
-  
+      }
+    }
+  `)
 
   queryResults.data?.allContentfulProject.edges.forEach(({ node }, index) => {
     const projects = queryResults.data.allContentfulProject.edges
@@ -47,5 +43,4 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-
-};
+}

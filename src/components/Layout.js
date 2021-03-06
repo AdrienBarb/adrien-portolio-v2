@@ -27,7 +27,3 @@ const Layout = ({ children }) => {
 }
 
 export default Layout
-
-// $bs: 1024px;
-// $ms: 768px;
-// $sm: 425px;
