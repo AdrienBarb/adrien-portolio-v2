@@ -11,7 +11,7 @@ export const Description = styled.div`
   top: 50%;
   transform: translateY(-50%);
   margin-left: 12rem;
-  max-width: 560px;
+  max-width: 580px;
   width: 100%;
   box-sizing: border-box;
   @media (max-width: 1024px) {
@@ -37,6 +37,7 @@ export const Description = styled.div`
   p {
     font-size: 1.2rem;
     line-height: 1.4;
+    font-weight: 200;
     @media (max-width: 425px) {
       font-size: 1rem;
     }

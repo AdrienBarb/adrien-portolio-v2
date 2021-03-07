@@ -24,7 +24,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  console.log(queryResults)
   const projects = queryResults.data.allContentfulProject.edges
   queryResults.data.allContentfulProject.edges.forEach((node, index) => {
     createPage({

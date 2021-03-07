@@ -20,6 +20,7 @@ export const StyledProjectNavigation = styled.div`
   }
 
   p {
+    font-weight: 200;
     color: ${(props) => props.theme.gray};
     font-size: 18px;
     font-style: oblique;
@@ -40,7 +41,7 @@ export const NavProjectIconWrapper = styled.div`
   display: flex;
   align-items: center;
 
-  a {
+  p {
     margin-right: ${(props) => (props.prev ? '.4rem' : '')};
     margin-left: ${(props) => (props.next ? '.4rem' : '')};
   }

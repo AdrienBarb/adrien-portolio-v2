@@ -17,8 +17,8 @@ const Navbar = ({nav}) => {
         <Link to="/">ADRIEN BARBIER</Link>
         {matches ? (
           <Navlink>
-            <Link to="/services">SERVICE</Link>
-            <Link to="/works">RÉALISATION</Link>
+            <Link to="/services">SERVICES</Link>
+            <Link to="/works">RÉALISATIONS</Link>
           </Navlink>
         ) : (
           <Fullnav />

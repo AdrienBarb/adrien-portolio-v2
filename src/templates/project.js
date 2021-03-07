@@ -9,16 +9,19 @@ import {
   StyledVideoWrapper,
 } from '../styles/projectStyles'
 import Img from 'gatsby-image'
+import { Helmet } from "react-helmet"
 
 const Project = ({ pageContext }) => {
   const { article, prev, next } = pageContext
 
-  console.log(article)
 
   return (
     <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Adrien Barbier | {article.title}</title>
+      </Helmet>
       <Navbar />
-
       <StyledProjectWrapper>
         <StyledProject>
           <StyledVideoWrapper>

@@ -3,10 +3,15 @@ import Layout from '../components/Layout'
 import Navbar from '../components/Navbar'
 import ServiceCard from '../components/ServiceCard'
 import { StyledServicesWrapper } from '../styles/servicesPageStyles'
+import { Helmet } from "react-helmet"
 
 const services = () => {
   return (
     <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Adrien Barbier | Services</title>
+      </Helmet>
       <Navbar />
       <StyledServicesWrapper>
         <ServiceCard

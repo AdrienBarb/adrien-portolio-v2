@@ -16,7 +16,6 @@ import {
 } from '../styles/homePageStyles'
 import IntroOverlay from './IntroOverlay'
 import useKonamiCode from './Konami'
-import test from '../images/test.gif'
 
 const Homepage = () => {
   const [change, setChange] = useState(false)
@@ -48,16 +47,14 @@ const Homepage = () => {
     })
   }, [])
 
-
   useEffect(() => {
-    if(konamiCode) {
+    if (konamiCode) {
       if (currentTheme === 'dark') {
         dispatch({ type: 'TOGGLE_THEME', theme: 'light' })
       } else {
         dispatch({ type: 'TOGGLE_THEME', theme: 'dark' })
       }
     }
-
   }, [konamiCode])
 
   const intersection = useIntersection(sectionRef, {
@@ -96,10 +93,10 @@ const Homepage = () => {
             Dével<Letter change={change}>o</Letter>ppeur web freelance
           </h1>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Du conseil à la réalisation, j’ai pour passion de donner vie à vos
+            idées: <strong>Site internet</strong>, <strong>application web</strong>, <strong>API</strong>. Ouvert à tout nouveau
+            challenge, je suis à l’écoute pour discuter de la manière dont je
+            peux être utile à votre projet !
           </p>
         </Description>
         <MoreInfos ref={knowMore}>(scrollez vers le bas)</MoreInfos>

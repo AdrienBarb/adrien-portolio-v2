@@ -3,10 +3,19 @@ require('dotenv').config({
 })
 
 module.exports = {
-  siteMetadata: {
-    title: 'adrien-portfolio-v2',
-  },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: 'src/images/logo.jpg',
+      },
+    },
     {
       resolve: 'gatsby-source-contentful',
       options: {
@@ -20,8 +29,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Roboto Mono`,
-          `source sans pro\:200,300,400,500,600,700`, // you can also specify font weights and styles
+          `Roboto Mono\:200,300,400,500,600,700`,
         ],
         display: 'swap',
       },
