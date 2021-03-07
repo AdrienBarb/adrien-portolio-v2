@@ -16,6 +16,7 @@ import {
 } from '../styles/homePageStyles'
 import IntroOverlay from './IntroOverlay'
 import useKonamiCode from './Konami'
+import Game from './Game'
 
 const Homepage = () => {
   const [change, setChange] = useState(false)
@@ -86,17 +87,18 @@ const Homepage = () => {
       <IntroOverlay overlay={overlay} />
 
       <Navbar nav={nav} />
-
       <MainSection>
+        {/* <Game /> */}
         <Description ref={description}>
           <h1>
             Dével<Letter change={change}>o</Letter>ppeur web freelance
           </h1>
           <p>
             Du conseil à la réalisation, j’ai pour passion de donner vie à vos
-            idées: <strong>Site internet</strong>, <strong>application web</strong>, <strong>API</strong>. Ouvert à tout nouveau
-            challenge, je suis à l’écoute pour discuter de la manière dont je
-            peux être utile à votre projet !
+            idées: <strong>Site internet</strong>,{' '}
+            <strong>application web</strong>, <strong>API</strong>. Ouvert à
+            tout nouveau challenge, je suis à l’écoute pour discuter de la
+            manière dont je peux être utile à votre projet !
           </p>
         </Description>
         <MoreInfos ref={knowMore}>(scrollez vers le bas)</MoreInfos>
