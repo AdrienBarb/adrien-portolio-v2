@@ -33,11 +33,10 @@ const Homepage = () => {
   console.log(konamiCode)
 
   useEffect(() => {
-    gsap.to('body', 0, { css: { visibility: 'visible' } })
 
     const t1 = gsap.timeline()
 
-    t1.to('.overlay', 1.6, {
+    t1.to('body', 0.4, { css: { visibility: 'visible' } }).to('.overlay', 1.6, {
       width: 0,
       ease: 'expo.inOut',
       stagger: 0.4,
