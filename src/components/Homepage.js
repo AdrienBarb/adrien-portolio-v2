@@ -16,6 +16,7 @@ import {
 } from '../styles/homePageStyles'
 import IntroOverlay from './IntroOverlay'
 import useKonamiCode from './Konami'
+import test from '../images/test.gif'
 
 const Homepage = () => {
   const [change, setChange] = useState(false)

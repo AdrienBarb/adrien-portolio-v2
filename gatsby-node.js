@@ -14,15 +14,8 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             website
             projectVideo {
-              id
-              file {
-                url
-              }
-              fluid {
-                base64
-                tracedSVG
-                srcWebp
-                srcSetWebp
+              fluid(maxWidth: 980) {
+                src
               }
             }
           }
@@ -31,6 +24,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  console.log(queryResults)
   const projects = queryResults.data.allContentfulProject.edges
   queryResults.data.allContentfulProject.edges.forEach((node, index) => {
     createPage({

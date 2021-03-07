@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const StyledProjectWrapper = styled.div`
-  padding: 10rem 1rem;
+  padding: 10rem 1rem 8rem 1rem;
+  box-sizing: border-box;
 `
 
 export const StyledProject = styled.div`
@@ -15,7 +16,7 @@ export const StyledProject = styled.div`
     align-items: center;
   }
 
-  video {
+  img {
     width: 100%;
     height: auto;
     @media (max-width: 1024px) {
@@ -25,14 +26,17 @@ export const StyledProject = styled.div`
 `
 
 export const StyledVideoWrapper = styled.div`
-  max-width: 900px;
+  max-width: 800px;
   margin-right: 2rem;
+  @media (max-width: 1024px) {
+    margin: 0;
+  }
 `
 
 export const StyledProjectDescription = styled.div`
-  max-width: 218px;
+  max-width: 300px;
   @media (max-width: 1024px) {
-    max-width: 900px;
+    max-width: 800px;
     margin-top: 2rem;
   }
 

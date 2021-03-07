@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
         color: ${props => props.theme.text};
         overflow-x: hidden;
         font-family: 'Roboto Mono';
+        visibility: hidden;
     }
 
     a {
@@ -26,6 +27,5 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const StyledLayout = styled.div`
-    max-width: 1400px;
     margin: 0 auto;
 `

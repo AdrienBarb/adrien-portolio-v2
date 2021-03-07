@@ -3,10 +3,9 @@ import styled from 'styled-components'
 export const StyledProjectNavigationWrapper = styled.div`
   background-color: ${(props) => props.theme.text};
   width: 100%;
+  height: 72px;
+  display: flex;
 
-  position: fixed;
-  bottom: 0;
-  left: 0;
 `
 
 export const StyledProjectNavigation = styled.div`
@@ -20,10 +19,11 @@ export const StyledProjectNavigation = styled.div`
     color: ${(props) => props.theme.background};
   }
 
-  a {
+  p {
     color: ${(props) => props.theme.gray};
     font-size: 18px;
     font-style: oblique;
+    margin: 0 auto;
   }
 `
 

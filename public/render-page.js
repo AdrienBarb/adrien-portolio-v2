@@ -1767,7 +1767,7 @@ if (false) {} else {
 /*! exports provided: data, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"data\":{\"allContentfulProject\":{\"edges\":[{\"node\":{\"title\":\"By Jorje\",\"slug\":\"by-jorje\"}},{\"node\":{\"title\":\"Alumni\",\"slug\":\"alumni\"}}]}}}");
+module.exports = JSON.parse("{\"data\":{\"allContentfulProject\":{\"edges\":[{\"node\":{\"title\":\"Portfolio\",\"slug\":\"portfolio\"}},{\"node\":{\"title\":\"Update Store\",\"slug\":\"update-store\"}},{\"node\":{\"title\":\"By Jorje\",\"slug\":\"by-jorje\"}},{\"node\":{\"title\":\"Alumni\",\"slug\":\"alumni\"}}]}}}");
 
 /***/ }),
 

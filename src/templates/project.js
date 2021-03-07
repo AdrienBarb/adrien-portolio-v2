@@ -8,9 +8,12 @@ import {
   StyledProjectDescription,
   StyledVideoWrapper,
 } from '../styles/projectStyles'
+import Img from 'gatsby-image'
 
 const Project = ({ pageContext }) => {
   const { article, prev, next } = pageContext
+
+  console.log(article)
 
   return (
     <Layout>
@@ -19,16 +22,16 @@ const Project = ({ pageContext }) => {
       <StyledProjectWrapper>
         <StyledProject>
           <StyledVideoWrapper>
-            {article.projectVideo && (
-              <video autoPlay loop src={article.projectVideo.file.url} />
-            )}
+            <img src={article.projectVideo.fluid.src} />
           </StyledVideoWrapper>
           <StyledProjectDescription>
             <h1>{article.title}</h1>
             <p>{article.description?.description}</p>
-            <a href={article.website} target="_blank">
-              Visiter le site
-            </a>
+            {article.website && (
+              <a href={article.website} target="_blank">
+                Visiter le site
+              </a>
+            )}
           </StyledProjectDescription>
         </StyledProject>
       </StyledProjectWrapper>

@@ -18,35 +18,45 @@ const ProjectNavigation = ({ prev, next }) => {
     <StyledProjectNavigationWrapper>
       <StyledProjectNavigationContainer>
         <StyledProjectNavigation left>
-          {matches ? (
-            <>
-              <h1>{prev && prev.title}</h1>
-              <Link to={`/${prev?.slug}`}>{prev && 'Précedent'}</Link>
-            </>
-          ) : (
-            <NavProjectIconWrapper prev>
-              {prev && (
-                <Link to={`/${prev?.slug}`}><FontAwesomeIcon className="social-icon" icon={faChevronLeft} /></Link>
-              )}
-              <h1>{prev && prev.title}</h1>
-            </NavProjectIconWrapper>
-          )}
+          <Link to={`/${prev?.slug}`}>
+            {matches ? (
+              <>
+                <h1>{prev && prev.title}</h1>
+                <p>{prev && 'Précedent'}</p>
+              </>
+            ) : (
+              <NavProjectIconWrapper prev>
+                {prev && (
+                  <FontAwesomeIcon
+                    className="social-icon"
+                    icon={faChevronLeft}
+                  />
+                )}
+                <h1>{prev && prev.title}</h1>
+              </NavProjectIconWrapper>
+            )}
+          </Link>
         </StyledProjectNavigation>
 
         <StyledProjectNavigation>
-          {matches ? (
-            <>
-              <h1>{next && next?.title}</h1>
-              <Link to={`/${next?.slug}`}>{next && 'Suivant'}</Link>
-            </>
-          ) : (
-            <NavProjectIconWrapper next>
-              <h1>{next && next?.title}</h1>
-              {next && (
-                <Link to={`/${next?.slug}`}><FontAwesomeIcon className="social-icon" icon={faChevronRight} /></Link>
-              )}
-            </NavProjectIconWrapper>
-          )}
+          <Link to={`/${next?.slug}`}>
+            {matches ? (
+              <>
+                <h1>{next && next?.title}</h1>
+                <p>{next && 'Suivant'}</p>
+              </>
+            ) : (
+              <NavProjectIconWrapper next>
+                <h1>{next && next?.title}</h1>
+                {next && (
+                  <FontAwesomeIcon
+                    className="social-icon"
+                    icon={faChevronRight}
+                  />
+                )}
+              </NavProjectIconWrapper>
+            )}
+          </Link>
         </StyledProjectNavigation>
       </StyledProjectNavigationContainer>
     </StyledProjectNavigationWrapper>
