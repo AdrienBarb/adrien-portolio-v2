@@ -15,10 +15,6 @@ const services = () => {
       <Navbar />
       <StyledServicesWrapper>
         <ServiceCard
-          title="Conseil"
-          description="La conception d’un produit est une étape primordiale. Elle permet de poser des bases solides, et d’anticiper au maximum les possibles futurs aléas du projet. C’est à cette étape qu’il faut se poser un maximum de questions afin de pouvoir cibler l’utilisateur, et développer une application ergonomique, intuitive, sur laquelle il pourra trouver rapidement l’information qu’il cherche."
-        />
-        <ServiceCard
           title="Conception"
           description="La conception d’un produit est une étape primordiale. Elle permet de poser des bases solides, et d’anticiper au maximum les possibles futurs aléas du projet. C’est à cette étape qu’il faut se poser un maximum de questions afin de pouvoir cibler l’utilisateur, et développer une application ergonomique, intuitive, sur laquelle il pourra trouver rapidement l’information qu’il cherche."
         />

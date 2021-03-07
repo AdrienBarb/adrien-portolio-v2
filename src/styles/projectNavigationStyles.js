@@ -3,13 +3,12 @@ import styled from 'styled-components'
 export const StyledProjectNavigationWrapper = styled.div`
   background-color: ${(props) => props.theme.text};
   width: 100%;
-  height: 72px;
+  height: 62px;
   display: flex;
-
 `
 
 export const StyledProjectNavigation = styled.div`
-  padding: 1rem;
+  padding: 1rem 2rem;
   text-align: ${(props) => (props.left ? 'left' : '')};
   color: ${(props) => props.theme.background};
 

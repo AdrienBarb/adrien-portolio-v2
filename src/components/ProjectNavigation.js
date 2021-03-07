@@ -21,7 +21,6 @@ const ProjectNavigation = ({ prev, next }) => {
           <Link to={`/${prev?.slug}`}>
             {matches ? (
               <>
-                <h1>{prev && prev.title}</h1>
                 <p>{prev && 'Précedent'}</p>
               </>
             ) : (
@@ -32,7 +31,6 @@ const ProjectNavigation = ({ prev, next }) => {
                     icon={faChevronLeft}
                   />
                 )}
-                <h1>{prev && prev.title}</h1>
               </NavProjectIconWrapper>
             )}
           </Link>
@@ -42,12 +40,10 @@ const ProjectNavigation = ({ prev, next }) => {
           <Link to={`/${next?.slug}`}>
             {matches ? (
               <>
-                <h1>{next && next?.title}</h1>
                 <p>{next && 'Suivant'}</p>
               </>
             ) : (
               <NavProjectIconWrapper next>
-                <h1>{next && next?.title}</h1>
                 {next && (
                   <FontAwesomeIcon
                     className="social-icon"

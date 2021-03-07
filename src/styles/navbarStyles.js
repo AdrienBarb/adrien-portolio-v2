@@ -9,6 +9,8 @@ export const NavbarWrapper = styled.div`
   box-sizing: border-box;
   max-width: 1400px;
   margin: 0 auto;
+  left: 0;
+    right: 0;
   background-color: ${props => props.theme.background}
 `
 
