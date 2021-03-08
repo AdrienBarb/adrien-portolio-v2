@@ -5,6 +5,8 @@ export const StyledProjectNavigationWrapper = styled.div`
   width: 100%;
   height: 62px;
   display: flex;
+  position: fixed;
+  bottom: 0;
 `
 
 export const StyledProjectNavigation = styled.div`

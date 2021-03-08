@@ -1,16 +1,20 @@
 import styled from 'styled-components'
 
 export const StyledProjectWrapper = styled.div`
-  padding: 10rem 1rem 8rem 1rem;
   box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 1rem;
 `
 
 export const StyledProject = styled.div`
   display: flex;
   align-items: end;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
   @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
@@ -61,6 +65,3 @@ export const StyledProjectDescription = styled.div`
     }
   }
 `
-
-
-

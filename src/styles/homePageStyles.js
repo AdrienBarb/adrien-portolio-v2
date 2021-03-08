@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const MainSection = styled.div`
   height: 100vh;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 `
 
 export const Description = styled.div`
@@ -10,12 +12,11 @@ export const Description = styled.div`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  margin-left: 12rem;
+  margin-left: 4rem;
   max-width: 580px;
   width: 100%;
   box-sizing: border-box;
   @media (max-width: 1024px) {
-    transform: translateY(0%);
     transform: translate(-50%, -50%);
     margin: 0 auto;
     left: 50%;
