@@ -27,6 +27,10 @@ export const StyledProjectNavigation = styled.div`
     font-style: oblique;
     margin: 0 auto;
   }
+
+  .navProjectLink {
+    cursor: pointer;
+  }
 `
 
 export const StyledProjectNavigationContainer = styled.div`

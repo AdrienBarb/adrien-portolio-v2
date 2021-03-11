@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../components/Layout'
 import Navbar from '../components/Navbar'
 import ServiceCard from '../components/ServiceCard'
 import { StyledServicesWrapper } from '../styles/servicesPageStyles'
-import { Helmet } from "react-helmet"
+import { Helmet } from 'react-helmet'
+import { onNavigationEnter } from '../animations/onNavigation'
 
-const services = () => {
+const Services = () => {
+  useEffect(() => {
+    onNavigationEnter()
+  }, [])
   return (
     <Layout>
       <Helmet>
@@ -13,7 +17,7 @@ const services = () => {
         <title>Adrien Barbier | Services</title>
       </Helmet>
       <Navbar />
-      <StyledServicesWrapper>
+      <StyledServicesWrapper className="animationOnNavigation">
         <ServiceCard
           title="Conception"
           description="La conception d’un produit est une étape primordiale. Elle permet de poser des bases solides, et d’anticiper au maximum les possibles futurs aléas du projet. C’est à cette étape qu’il faut se poser un maximum de questions afin de pouvoir cibler l’utilisateur, et développer une application ergonomique, intuitive, sur laquelle il pourra trouver rapidement l’information qu’il cherche."
@@ -31,4 +35,4 @@ const services = () => {
   )
 }
 
-export default services
+export default Services

@@ -17,6 +17,7 @@ import {
 import IntroOverlay from './IntroOverlay'
 import useKonamiCode from './Konami'
 import Game from './Game'
+import { onNavigationEnter } from '../animations/onNavigation'
 
 const Homepage = () => {
   const [change, setChange] = useState(false)
@@ -33,20 +34,20 @@ const Homepage = () => {
   console.log(konamiCode)
 
   useEffect(() => {
-
-    // .to('body', 0.4, { css: { visibility: 'visible' } })
+    // gsap.to('html', 0.4, { css: { visibility: 'visible' } })
 
     const t1 = gsap.timeline()
+    t1.to('body', 0, { css: { visibility: 'visible' } })
 
-    t1.to('.overlay', 1.6, {
-      width: 0,
+    t1.to('.animationOnHomepage', 1, {
+      opacity: 1,
       ease: 'expo.inOut',
-      stagger: 0.4,
-    }).to(overlay.current, 0, {
-      css: {
-        display: 'none',
-      },
+      stagger: 0.2,
     })
+  }, [])
+
+  useEffect(() => {
+    onNavigationEnter()
   }, [])
 
   useEffect(() => {
@@ -85,12 +86,12 @@ const Homepage = () => {
 
   return (
     <Layout>
-      <IntroOverlay overlay={overlay} />
+      {/* <IntroOverlay overlay={overlay} /> */}
 
       <Navbar nav={nav} />
       <MainSection>
         {/* <Game /> */}
-        <Description ref={description}>
+        <Description className="animationOnHomepage" ref={description}>
           <h1>
             Dével<Letter change={change}>o</Letter>ppeur web freelance
           </h1>
@@ -102,7 +103,9 @@ const Homepage = () => {
             manière dont je peux être utile à votre projet !
           </p>
         </Description>
-        <MoreInfos ref={knowMore}>(scrollez vers le bas)</MoreInfos>
+        <MoreInfos className="animationOnHomepage" ref={knowMore}>
+          (scrollez vers le bas)
+        </MoreInfos>
       </MainSection>
       <div ref={sectionRef}>
         <div ref={contact}>

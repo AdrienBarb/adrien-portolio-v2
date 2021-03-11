@@ -8,7 +8,7 @@ export const MainSection = styled.div`
 `
 
 export const Description = styled.div`
-  opacity: 1;
+  opacity: 0;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -50,6 +50,7 @@ export const Title = styled.div`
 `
 
 export const MoreInfos = styled.div`
+  opacity: 0;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -59,7 +60,6 @@ export const MoreInfos = styled.div`
   white-space: nowrap;
   color: ${(props) => props.theme.gray};
 `
-
 
 export const Letter = styled.span`
   color: ${(props) =>

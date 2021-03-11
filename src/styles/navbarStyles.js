@@ -10,8 +10,12 @@ export const NavbarWrapper = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   left: 0;
-    right: 0;
-  background-color: ${props => props.theme.background}
+  right: 0;
+  background-color: ${(props) => props.theme.background};
+
+  .navLink {
+    cursor: pointer;
+  }
 `
 
 export const NavbarStyle = styled.div`
@@ -23,8 +27,9 @@ export const NavbarStyle = styled.div`
 `
 
 export const Navlink = styled.div`
-  a {
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  .navLink {
     margin-left: 1rem;
   }
 `

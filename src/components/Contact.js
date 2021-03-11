@@ -36,7 +36,7 @@ const Contact = () => {
   )
 
   return (
-    <StyledContactWrapper>
+    <StyledContactWrapper className="animationOnNavigation">
         {email}
         {phone}
         {linkedin}

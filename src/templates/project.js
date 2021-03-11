@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../components/Layout'
 import Navbar from '../components/Navbar'
 import ProjectNavigation from '../components/ProjectNavigation'
@@ -9,11 +9,15 @@ import {
   StyledVideoWrapper,
 } from '../styles/projectStyles'
 import Img from 'gatsby-image'
-import { Helmet } from "react-helmet"
+import { Helmet } from 'react-helmet'
+import { onNavigationEnter } from '../animations/onNavigation'
 
 const Project = ({ pageContext }) => {
   const { article, prev, next } = pageContext
 
+  useEffect(() => {
+    onNavigationEnter()
+  }, [])
 
   return (
     <Layout>
@@ -22,7 +26,7 @@ const Project = ({ pageContext }) => {
         <title>Adrien Barbier | {article.title}</title>
       </Helmet>
       <Navbar />
-      <StyledProjectWrapper>
+      <StyledProjectWrapper className="animationOnNavigation">
         <StyledProject>
           <StyledVideoWrapper>
             <img src={article.projectVideo.fluid.src} />

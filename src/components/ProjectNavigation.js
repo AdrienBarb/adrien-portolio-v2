@@ -10,15 +10,19 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { Link } from 'gatsby'
+import { handleNavigationLeave } from '../animations/onNavigation'
 
 const ProjectNavigation = ({ prev, next }) => {
   const matches = useMediaQuery('(min-width:768px)')
 
   return (
-    <StyledProjectNavigationWrapper>
+    <StyledProjectNavigationWrapper className="animationOnNavigation">
       <StyledProjectNavigationContainer>
         <StyledProjectNavigation left>
-          <Link to={`/${prev?.slug}`}>
+          <div
+            className="navProjectLink"
+            onClick={() => handleNavigationLeave(`/${prev?.slug}`)}
+          >
             {matches ? (
               <>
                 <p>{prev && 'Précedent'}</p>
@@ -33,11 +37,14 @@ const ProjectNavigation = ({ prev, next }) => {
                 )}
               </NavProjectIconWrapper>
             )}
-          </Link>
+          </div>
         </StyledProjectNavigation>
 
         <StyledProjectNavigation>
-          <Link to={`/${next?.slug}`}>
+          <div
+            className="navProjectLink"
+            onClick={() => handleNavigationLeave(`/${next?.slug}`)}
+          >
             {matches ? (
               <>
                 <p>{next && 'Suivant'}</p>
@@ -52,7 +59,7 @@ const ProjectNavigation = ({ prev, next }) => {
                 )}
               </NavProjectIconWrapper>
             )}
-          </Link>
+          </div>
         </StyledProjectNavigation>
       </StyledProjectNavigationContainer>
     </StyledProjectNavigationWrapper>
