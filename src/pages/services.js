@@ -11,7 +11,7 @@ const Services = () => {
     onNavigationEnter()
   }, [])
   return (
-    <Layout>
+    <>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Adrien Barbier | Services</title>
@@ -31,7 +31,7 @@ const Services = () => {
           description="C’est à cette étape que le projet prend forme. Je m’adapte le plus possible à vos besoins en utilisant les technologies qui correspondent le mieux à vos projets. Le but étant de développer une application web ou un site internet facile d’utilisation pour vos utilisateurs comme pour vous !"
         />
       </StyledServicesWrapper>
-    </Layout>
+    </>
   )
 }
 

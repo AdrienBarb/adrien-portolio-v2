@@ -85,7 +85,7 @@ const Homepage = () => {
     : fadeIn(description, contact, nav, knowMore)
 
   return (
-    <Layout>
+    <>
       {/* <IntroOverlay overlay={overlay} /> */}
 
       <Navbar nav={nav} />
@@ -112,7 +112,7 @@ const Homepage = () => {
           <Contact />
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 

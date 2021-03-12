@@ -28,7 +28,7 @@ const Works = () => {
   }, [])
 
   return (
-    <Layout>
+    <>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Adrien Barbier | Réalisations</title>
@@ -48,7 +48,7 @@ const Works = () => {
           )
         })}
       </StyledWorksWrapper>
-    </Layout>
+    </>
   )
 }
 
