@@ -11,20 +11,20 @@ const Navbar = ({ nav }) => {
   return (
     <NavbarWrapper ref={nav} className="animationOnNavigation">
       <NavbarStyle>
-        <div className="navLink" onClick={() => handleNavigationLeave('/')}>
+        <div className="navLink" onClick={() => handleNavigationLeave('')}>
           ADRIEN BARBIER
         </div>
         {matches ? (
           <Navlink>
             <div
               className="navLink"
-              onClick={() => handleNavigationLeave('/services')}
+              onClick={() => handleNavigationLeave('services')}
             >
               SERVICES
             </div>
             <div
               className="navLink"
-              onClick={() => handleNavigationLeave('/works')}
+              onClick={() => handleNavigationLeave('works')}
             >
               RÉALISATIONS
             </div>

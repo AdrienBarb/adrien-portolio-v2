@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Layout from '../components/Layout'
 import Navbar from '../components/Navbar'
 import ProjectNavigation from '../components/ProjectNavigation'
 import {
@@ -8,7 +7,6 @@ import {
   StyledProjectDescription,
   StyledVideoWrapper,
 } from '../styles/projectStyles'
-import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
 import { onNavigationEnter } from '../animations/onNavigation'
 

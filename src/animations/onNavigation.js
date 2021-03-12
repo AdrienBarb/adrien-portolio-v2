@@ -22,8 +22,12 @@ export const onNavigationEnter = () => {
 }
 
 export const handleNavigationLeave = (path) => {
-  onNavigationLeave()
-  setTimeout(function () {
-    navigate(path)
-  }, 1200)
+  let urlArray = window.location.href.split('/')
+  let currentPath = urlArray[urlArray.length - 1]
+  if (currentPath !== path) {
+    onNavigationLeave()
+    setTimeout(function () {
+      navigate(`/${path}`)
+    }, 1200)
+  }
 }

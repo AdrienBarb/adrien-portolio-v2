@@ -21,7 +21,7 @@ const ProjectNavigation = ({ prev, next }) => {
         <StyledProjectNavigation left>
           <div
             className="navProjectLink"
-            onClick={() => handleNavigationLeave(`/${prev?.slug}`)}
+            onClick={() => handleNavigationLeave(`${prev?.slug}`)}
           >
             {matches ? (
               <>
@@ -43,7 +43,7 @@ const ProjectNavigation = ({ prev, next }) => {
         <StyledProjectNavigation>
           <div
             className="navProjectLink"
-            onClick={() => handleNavigationLeave(`/${next?.slug}`)}
+            onClick={() => handleNavigationLeave(`${next?.slug}`)}
           >
             {matches ? (
               <>

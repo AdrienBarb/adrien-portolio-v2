@@ -1,5 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
-import Layout from './Layout'
+import React, { useRef, useEffect } from 'react'
 import Navbar from './Navbar'
 import Contact from './Contact'
 import { useIntersection } from 'react-use'
@@ -8,36 +7,23 @@ import {
   useGlobalStateContext,
   useGlobalDispatchContext,
 } from '../context/globalContext'
-import {
-  MainSection,
-  Description,
-  MoreInfos,
-  Letter,
-} from '../styles/homePageStyles'
-import IntroOverlay from './IntroOverlay'
+import { MainSection, Description, MoreInfos } from '../styles/homePageStyles'
 import useKonamiCode from './Konami'
 import Game from './Game'
 import { onNavigationEnter } from '../animations/onNavigation'
 
 const Homepage = () => {
-  const [change, setChange] = useState(false)
   const sectionRef = useRef(null)
   const description = useRef(null)
   const contact = useRef(null)
   const nav = useRef(null)
   const knowMore = useRef(null)
-  const overlay = useRef(null)
   const dispatch = useGlobalDispatchContext()
   const { currentTheme } = useGlobalStateContext()
   const [konamiCode] = useKonamiCode()
 
-  console.log(konamiCode)
-
   useEffect(() => {
-    // gsap.to('html', 0.4, { css: { visibility: 'visible' } })
-
     const t1 = gsap.timeline()
-    t1.to('body', 0, { css: { visibility: 'visible' } })
 
     t1.to('.animationOnHomepage', 1, {
       opacity: 1,
@@ -86,15 +72,11 @@ const Homepage = () => {
 
   return (
     <>
-      {/* <IntroOverlay overlay={overlay} /> */}
-
       <Navbar nav={nav} />
       <MainSection>
         {/* <Game /> */}
         <Description className="animationOnHomepage" ref={description}>
-          <h1>
-            Dével<Letter change={change}>o</Letter>ppeur web freelance
-          </h1>
+          <h1>Développeur web freelance</h1>
           <p>
             Du conseil à la réalisation, j’ai pour passion de donner vie à vos
             idées: <strong>Site internet</strong>,{' '}

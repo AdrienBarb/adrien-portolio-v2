@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Layout from '../components/Layout'
 import Navbar from '../components/Navbar'
 import ServiceCard from '../components/ServiceCard'
 import { StyledServicesWrapper } from '../styles/servicesPageStyles'
