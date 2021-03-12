@@ -20,6 +20,7 @@ export const StyledContactWrapper = styled.div`
     justify-content: space-between;
     box-sizing: border-box;
     padding: 2rem;
+    opacity: 0;
     max-width: 1400px;
     margin: 0 auto;
     height: 48px;

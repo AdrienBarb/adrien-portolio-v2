@@ -9,14 +9,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import { Link } from 'gatsby'
 import { handleNavigationLeave } from '../animations/onNavigation'
 
 const ProjectNavigation = ({ prev, next }) => {
   const matches = useMediaQuery('(min-width:768px)')
 
   return (
-    <StyledProjectNavigationWrapper className="animationOnNavigation">
+    <StyledProjectNavigationWrapper>
       <StyledProjectNavigationContainer>
         <StyledProjectNavigation left>
           <div

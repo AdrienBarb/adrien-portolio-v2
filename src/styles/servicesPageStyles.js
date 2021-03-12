@@ -5,6 +5,7 @@ export const StyledServicesWrapper = styled.div`
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+  opacity: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
