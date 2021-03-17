@@ -20,22 +20,9 @@ export const globalReducer = (state, action) => {
 }
 
 export const GlobalProvider = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulProject(sort: { fields: [updatedAt], order: DESC }) {
-        edges {
-          node {
-            title
-            slug
-          }
-        }
-      }
-    }
-  `)
 
   const [state, dispatch] = useReducer(globalReducer, {
-    currentTheme: 'dark',
-    dataTest: data.allContentfulProject.edges,
+    currentTheme: localStorage.getItem('themeColor'),
   })
 
   return (

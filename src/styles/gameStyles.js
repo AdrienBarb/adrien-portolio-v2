@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledGame = styled.div`
+  opacity: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,12 +17,9 @@ export const StyledGame = styled.div`
     margin: 0 1rem;
   }
 
-  svg {
-    fill: red;
-  }
-
   p {
     font-size: 42px;
     margin: 0;
+    white-space: nowrap;
   }
 `

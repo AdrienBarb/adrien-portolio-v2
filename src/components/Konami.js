@@ -54,8 +54,10 @@ function useKonamiCode(defCode = [37, 37, 39, 39, 13]) {
   useEffect(() => {
     if (konamiCode) {
       if (currentTheme === 'dark') {
+        localStorage.setItem('themeColor', 'light')
         dispatch({ type: 'TOGGLE_THEME', theme: 'light' })
       } else {
+        localStorage.setItem('themeColor', 'dark')
         dispatch({ type: 'TOGGLE_THEME', theme: 'dark' })
       }
     }
