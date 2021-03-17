@@ -61,7 +61,3 @@ export const MoreInfos = styled.div`
   color: ${(props) => props.theme.gray};
 `
 
-export const Letter = styled.span`
-  color: ${(props) =>
-    props.change ? props.theme.background : props.theme.text};
-`

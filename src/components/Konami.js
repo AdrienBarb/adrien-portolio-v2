@@ -1,7 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  useGlobalStateContext,
+  useGlobalDispatchContext,
+} from '../context/globalContext'
 
 function useKonamiCode(defCode = [37, 37, 39, 39, 13]) {
   const refIndex = useRef(0)
+  const dispatch = useGlobalDispatchContext()
+  const { currentTheme } = useGlobalStateContext()
   // State for keeping track of konami state
   const [konamiCode, setIsKonami] = useState(false)
   const codes = useMemo(function memoizeDefCode() {
@@ -44,6 +50,18 @@ function useKonamiCode(defCode = [37, 37, 39, 39, 13]) {
     },
     [onKeyUpCallback]
   )
+
+  useEffect(() => {
+    if (konamiCode) {
+      if (currentTheme === 'dark') {
+        dispatch({ type: 'TOGGLE_THEME', theme: 'light' })
+      } else {
+        dispatch({ type: 'TOGGLE_THEME', theme: 'dark' })
+      }
+    }
+  }, [konamiCode])
+
+  console.log(konamiCode)
 
   return [konamiCode, setIsKonami]
 }

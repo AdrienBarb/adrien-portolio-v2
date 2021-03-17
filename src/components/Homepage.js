@@ -17,6 +17,7 @@ const Homepage = () => {
   const description = useRef(null)
   const contact = useRef(null)
   const nav = useRef(null)
+  const game = useRef(null)
   const knowMore = useRef(null)
   const dispatch = useGlobalDispatchContext()
   const { currentTheme } = useGlobalStateContext()
@@ -36,16 +37,6 @@ const Homepage = () => {
     onNavigationEnter()
   }, [])
 
-  useEffect(() => {
-    if (konamiCode) {
-      if (currentTheme === 'dark') {
-        dispatch({ type: 'TOGGLE_THEME', theme: 'light' })
-      } else {
-        dispatch({ type: 'TOGGLE_THEME', theme: 'dark' })
-      }
-    }
-  }, [konamiCode])
-
   const intersection = useIntersection(sectionRef, {
     root: null,
     rootMargin: '0px',
@@ -56,6 +47,7 @@ const Homepage = () => {
     gsap.to(description.current, 1, { opacity: 0, y: -20, ease: 'power4.out' })
     gsap.to(knowMore.current, 1, { opacity: 0, y: -20, ease: 'power4.out' })
     gsap.to(contact.current, 1, { opacity: 1, y: -20, ease: 'power4.out' })
+    gsap.to(game.current, 1, { opacity: 1, y: -20, ease: 'power4.out' })
     gsap.to(nav.current, 1, { opacity: 1, y: 0, ease: 'power4.out' })
   }
 
@@ -63,6 +55,7 @@ const Homepage = () => {
     gsap.to(description.current, 1, { opacity: 1, y: 0, ease: 'power4.out' })
     gsap.to(knowMore.current, 1, { opacity: 1, y: 0, ease: 'power4.out' })
     gsap.to(contact.current, 1, { opacity: 0, y: -20, ease: 'power4.out' })
+    gsap.to(game.current, 1, { opacity: 0, y: -20, ease: 'power4.out' })
     gsap.to(nav.current, 1, { opacity: 0, y: -20, ease: 'power4.out' })
   }
 
@@ -74,7 +67,7 @@ const Homepage = () => {
     <>
       <Navbar nav={nav} />
       <MainSection>
-        {/* <Game /> */}
+        <Game game={game} konamiCode={konamiCode} />
         <Description className="animationOnHomepage" ref={description}>
           <h1>Développeur web freelance</h1>
           <p>
