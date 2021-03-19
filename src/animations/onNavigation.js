@@ -7,7 +7,6 @@ export const onNavigationLeave = () => {
   t1.to('.animationOnNavigation', 1, {
     opacity: 0,
     ease: 'expo.inOut',
-    stagger: 0.2,
   })
 }
 
@@ -17,7 +16,6 @@ export const onNavigationEnter = () => {
   t1.to('.animationOnNavigation', 1, {
     opacity: 1,
     ease: 'expo.inOut',
-    stagger: 0.2,
   })
 }
 

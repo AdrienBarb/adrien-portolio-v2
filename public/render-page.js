@@ -31803,17 +31803,6 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./public/page-data/sq/d/1816186378.json":
-/*!***********************************************!*\
-  !*** ./public/page-data/sq/d/1816186378.json ***!
-  \***********************************************/
-/*! exports provided: data, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"data\":{\"allContentfulProject\":{\"edges\":[{\"node\":{\"title\":\"Alumni\",\"slug\":\"alumni\"}},{\"node\":{\"title\":\"Portfolio\",\"slug\":\"portfolio\"}},{\"node\":{\"title\":\"Update Store\",\"slug\":\"update-store\"}},{\"node\":{\"title\":\"By Jorje\",\"slug\":\"by-jorje\"}}]}}}");
-
-/***/ }),
-
 /***/ "./src/components/Layout.js":
 /*!**********************************!*\
   !*** ./src/components/Layout.js ***!
@@ -31871,14 +31860,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlobalProvider", function() { return GlobalProvider; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useGlobalStateContext", function() { return useGlobalStateContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useGlobalDispatchContext", function() { return useGlobalDispatchContext; });
-/* harmony import */ var _public_page_data_sq_d_1816186378_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../public/page-data/sq/d/1816186378.json */ "./public/page-data/sq/d/1816186378.json");
-var _public_page_data_sq_d_1816186378_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../public/page-data/sq/d/1816186378.json */ "./public/page-data/sq/d/1816186378.json", 1);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
 
 
-const GlobalStateContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createContext"])();
-const GlobalDispatchContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["createContext"])();
+const GlobalStateContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
+const GlobalDispatchContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
 const globalReducer = (state, action) => {
   switch (action.type) {
     case 'TOGGLE_THEME':
@@ -31897,22 +31885,20 @@ const globalReducer = (state, action) => {
 const GlobalProvider = ({
   children
 }) => {
-  const data = _public_page_data_sq_d_1816186378_json__WEBPACK_IMPORTED_MODULE_0__.data;
   const {
     0: state,
     1: dispatch
-  } = Object(react__WEBPACK_IMPORTED_MODULE_1__["useReducer"])(globalReducer, {
-    currentTheme: 'dark',
-    dataTest: data.allContentfulProject.edges
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(globalReducer, {
+    currentTheme: localStorage.getItem('themeColor')
   });
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(GlobalDispatchContext.Provider, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GlobalDispatchContext.Provider, {
     value: dispatch
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(GlobalStateContext.Provider, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GlobalStateContext.Provider, {
     value: state
   }, children));
 };
-const useGlobalStateContext = () => Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(GlobalStateContext);
-const useGlobalDispatchContext = () => Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(GlobalDispatchContext);
+const useGlobalStateContext = () => Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(GlobalStateContext);
+const useGlobalDispatchContext = () => Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(GlobalDispatchContext);
 
 /***/ }),
 
@@ -31948,7 +31934,6 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
         color: ${props => props.theme.text};
         overflow-x: hidden;
         font-family: 'Roboto Mono';
-        visibility: hidden;
     }
 
     a {

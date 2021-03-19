@@ -15,7 +15,7 @@ const ProjectNavigation = ({ prev, next }) => {
   const matches = useMediaQuery('(min-width:768px)')
 
   return (
-    <StyledProjectNavigationWrapper>
+    <StyledProjectNavigationWrapper className="animationOnNavigation">
       <StyledProjectNavigationContainer>
         <StyledProjectNavigation left>
           <div

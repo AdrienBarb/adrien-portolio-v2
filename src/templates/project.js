@@ -18,7 +18,7 @@ const Project = ({ pageContext }) => {
   }, [])
 
   return (
-    <>
+    <div>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Adrien Barbier | {article.title}</title>
@@ -41,7 +41,7 @@ const Project = ({ pageContext }) => {
         </StyledProject>
       </StyledProjectWrapper>
       <ProjectNavigation prev={prev} next={next} />
-    </>
+    </div>
   )
 }
 

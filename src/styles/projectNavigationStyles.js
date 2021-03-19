@@ -7,6 +7,7 @@ export const StyledProjectNavigationWrapper = styled.div`
   display: flex;
   position: fixed;
   bottom: 0;
+  opacity: 0;
 `
 
 export const StyledProjectNavigation = styled.div`
