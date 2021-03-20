@@ -1,19 +1,23 @@
 import React, { useRef, useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import gsap from 'gsap'
-import { MainSection, Description, MoreInfos } from '../styles/homePageStyles'
+import { MainSection, Description, MoreInfos, Close } from '../styles/homePageStyles'
 import useKonamiCode from './Konami'
 import Game from './Game'
 import { onNavigationEnter } from '../animations/onNavigation'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 const Homepage = () => {
   const description = useRef(null)
-  const contact = useRef(null)
   const nav = useRef(null)
   const game = useRef(null)
+  const close = useRef(null)
   const knowMore = useRef(null)
   const [konamiCode] = useKonamiCode()
   const [toggle, setToggle] = useState(false)
+  const matches = useMediaQuery('(max-width:768px)')
 
   useEffect(() => {
     const t1 = gsap.timeline()
@@ -29,23 +33,23 @@ const Homepage = () => {
     onNavigationEnter()
   }, [])
   
-  const fadeIn = (description, contact, nav) => {
+  const fadeIn = (description, game, nav, close) => {
     gsap.to(description.current, 1, { opacity: 0, y: -20, ease: 'power4.out' })
-    gsap.to(contact.current, 1, { opacity: 0, y: -20, ease: 'power4.out' })
-    gsap.to(game.current, 1, { opacity: 1, y: -20, ease: 'power4.out' })
-    gsap.to(nav.current, 1, { opacity: 0, y: 0, ease: 'power4.out' })
+    gsap.to(game.current, 1, { opacity: 1, y: 0, ease: 'power4.out' })
+    gsap.to(nav.current, 1, { opacity: 0, y: -20, ease: 'power4.out' })
+    gsap.to(close.current, 1, { opacity: 1, y: 0, ease: 'power4.out' })
   }
   
-  const fadeOut = (description, contact, nav) => {
+  const fadeOut = (description, game, nav, close) => {
     gsap.to(description.current, 1, { opacity: 1, y: 0, ease: 'power4.out' })
-    gsap.to(contact.current, 1, { opacity: 0, y: -20, ease: 'power4.out' })
-    gsap.to(game.current, 1, { opacity: 0, y: -20, ease: 'power4.out' })
-    gsap.to(nav.current, 1, { opacity: 0, y: -20, ease: 'power4.out' })
+    gsap.to(game.current, 1, { opacity: 0, y: +20, ease: 'power4.out' })
+    gsap.to(nav.current, 1, { opacity: 1, y: 0, ease: 'power4.out' })
+    gsap.to(close.current, 1, { opacity: 0, y: +20, ease: 'power4.out' })
   }
 
   const handleClick = () => {
     console.log(toggle)
-    toggle ? fadeOut(description, contact, nav)  : fadeIn(description, contact, nav, knowMore)
+    toggle ? fadeOut(description, game, nav, close)  : fadeIn(description, game, nav, close)
     setToggle(!toggle)
     
   }
@@ -64,10 +68,15 @@ const Homepage = () => {
             tout nouveau challenge, je suis à l’écoute pour discuter de la
             manière dont je peux être utile à votre projet !
           </p>
+          {!matches && 
           <MoreInfos className="animationOnHomepage" onClick={handleClick}>
             Let's play !
           </MoreInfos>
+          }
         </Description>
+        <Close ref={close} onClick={handleClick}>
+        <FontAwesomeIcon className="social-icon" icon={faArrowLeft} />
+        </Close>
       </MainSection>
     </>
   )

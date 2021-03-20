@@ -63,3 +63,24 @@ export const MoreInfos = styled.div`
   }
 `
 
+export const Close = styled.div`
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  opacity: 0;
+  background-color: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.text};
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transition: 0.6s background-color;
+  z-index: 8000;
+
+  &:hover {
+    background-color: ${(props) => props.theme.text};
+    color: ${(props) => props.theme.background};
+    cursor: pointer;
+  }
+`

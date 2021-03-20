@@ -9,8 +9,8 @@ const Navbar = ({ nav }) => {
   const matches = useMediaQuery('(min-width:768px)')
 
   return (
-    <NavbarWrapper  className="animationOnNavigation">
-      <NavbarStyle  ref={nav}>
+    <NavbarWrapper ref={nav}  className="animationOnNavigation">
+      <NavbarStyle >
         <div className="navLink" onClick={() => handleNavigationLeave('')}>
           ADRIEN BARBIER
         </div>

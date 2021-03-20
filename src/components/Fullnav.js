@@ -40,7 +40,7 @@ const FullNav = () => {
 
   return (
     <>
-      <StyledHumburger onClick={() => handleAnimation()}>
+      <StyledHumburger isOpen={isOpen} onClick={() => handleAnimation()}>
         <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
       </StyledHumburger>
       <StyledFullnavWrapper ref={fullNav}>
