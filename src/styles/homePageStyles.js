@@ -51,13 +51,15 @@ export const Title = styled.div`
 
 export const MoreInfos = styled.div`
   opacity: 0;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 1.2rem;
+  bottom: 6rem;
   font-weight: 200;
   transition: 0.6s color;
   white-space: nowrap;
   color: ${(props) => props.theme.gray};
+
+  &:hover {
+    cursor: pointer;
+    color: ${(props) => props.theme.text};
+  }
 `
 

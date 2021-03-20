@@ -16,14 +16,19 @@ export const StyledContact = styled.div`
 `
 
 export const StyledContactWrapper = styled.div`
+    position: fixed;
+    width: 100%;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 2rem;
-    opacity: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 1rem 2rem;
     max-width: 1400px;
     margin: 0 auto;
-    height: 48px;
+    max-width: 1400px;
+    right: 0;
     @media (max-width: 768px) {
         height: 22px;
     }

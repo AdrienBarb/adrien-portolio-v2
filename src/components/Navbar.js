@@ -9,8 +9,8 @@ const Navbar = ({ nav }) => {
   const matches = useMediaQuery('(min-width:768px)')
 
   return (
-    <NavbarWrapper ref={nav} className="animationOnNavigation">
-      <NavbarStyle>
+    <NavbarWrapper  className="animationOnNavigation">
+      <NavbarStyle  ref={nav}>
         <div className="navLink" onClick={() => handleNavigationLeave('')}>
           ADRIEN BARBIER
         </div>
@@ -27,6 +27,12 @@ const Navbar = ({ nav }) => {
               onClick={() => handleNavigationLeave('works')}
             >
               RÉALISATIONS
+            </div>
+            <div
+              className="navLink"
+              onClick={() => handleNavigationLeave('contact')}
+            >
+              CONTACT
             </div>
           </Navlink>
         ) : (

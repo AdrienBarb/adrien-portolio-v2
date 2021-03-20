@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components'
 import { useGlobalStateContext } from '../context/globalContext'
 import { GlobalStyle, StyledLayout } from '../styles/globalStyles'
 
+
 const darkTheme = {
   background: '#121212',
   text: '#fff',

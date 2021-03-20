@@ -63,7 +63,6 @@ function useKonamiCode(defCode = [37, 37, 39, 39, 13]) {
     }
   }, [konamiCode])
 
-  console.log(konamiCode)
 
   return [konamiCode, setIsKonami]
 }
