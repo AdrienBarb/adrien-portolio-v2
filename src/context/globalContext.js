@@ -26,7 +26,7 @@ export const GlobalProvider = ({ children }) => {
   // })
 
   const [state, dispatch] = useReducer(globalReducer, {
-    currentTheme: typeof window !== undefined && window.localStorage.getItem('themeColor'),
+    currentTheme: typeof window !== 'undefined' && window.localStorage.getItem('themeColor'),
   })
 
   return (
