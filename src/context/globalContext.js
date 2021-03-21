@@ -19,14 +19,14 @@ export const globalReducer = (state, action) => {
 }
 
 export const GlobalProvider = ({ children }) => {
-  const [key, setKey] = useState(null)
+  // const [key, setKey] = useState(null)
 
-  useEffect(() => {
-    setKey(localStorage.getItem('themeColor'))
-  }, [])
+  // useEffect(() => {
+  //   setKey(localStorage.getItem('themeColor'))
+  // })
 
   const [state, dispatch] = useReducer(globalReducer, {
-    currentTheme: key,
+    currentTheme: window !== 'undefined' ? localStorage.getItem('themeColor') : null,
   })
 
   return (

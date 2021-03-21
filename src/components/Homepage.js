@@ -29,6 +29,8 @@ const Homepage = () => {
     })
   }, [])
 
+  console.log(window !== 'undefined')
+
   useEffect(() => {
     onNavigationEnter()
   }, [])

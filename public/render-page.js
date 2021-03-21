@@ -31886,10 +31886,17 @@ const GlobalProvider = ({
   children
 }) => {
   const {
+    0: key,
+    1: setKey
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    setKey(localStorage.getItem('themeColor'));
+  });
+  const {
     0: state,
     1: dispatch
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(globalReducer, {
-    currentTheme: localStorage.getItem('themeColor')
+    currentTheme: key
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GlobalDispatchContext.Provider, {
     value: dispatch
