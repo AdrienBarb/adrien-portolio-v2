@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext, useState } from 'react'
+import React, { createContext, useReducer, useContext, useState, useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 const GlobalStateContext = createContext()
@@ -26,7 +26,7 @@ export const GlobalProvider = ({ children }) => {
   }, [])
 
   const [state, dispatch] = useReducer(globalReducer, {
-    currentTheme: localStorage.getItem('themeColor'),
+    currentTheme: key,
   })
 
   return (
