@@ -1,5 +1,4 @@
-import React, { createContext, useReducer, useContext, useState, useEffect } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import React, { createContext, useReducer, useContext } from 'react'
 
 const GlobalStateContext = createContext()
 const GlobalDispatchContext = createContext()
@@ -19,11 +18,6 @@ export const globalReducer = (state, action) => {
 }
 
 export const GlobalProvider = ({ children }) => {
-  // const [key, setKey] = useState(null)
-
-  // useEffect(() => {
-  //   setKey(localStorage.getItem('themeColor'))
-  // })
 
   const [state, dispatch] = useReducer(globalReducer, {
     currentTheme: typeof window !== 'undefined' && window.localStorage.getItem('themeColor'),

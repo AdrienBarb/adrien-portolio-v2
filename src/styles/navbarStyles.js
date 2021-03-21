@@ -12,7 +12,6 @@ export const NavbarWrapper = styled.div`
   margin: 0 auto;
   left: 0;
   right: 0;
-  background-color: ${(props) => props.theme.background};
 
   .navLink {
     cursor: pointer;
