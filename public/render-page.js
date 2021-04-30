@@ -31862,8 +31862,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useGlobalDispatchContext", function() { return useGlobalDispatchContext; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
-
 
 const GlobalStateContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
 const GlobalDispatchContext = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])();
@@ -31886,17 +31884,10 @@ const GlobalProvider = ({
   children
 }) => {
   const {
-    0: key,
-    1: setKey
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    setKey(localStorage.getItem('themeColor'));
-  });
-  const {
     0: state,
     1: dispatch
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(globalReducer, {
-    currentTheme: key
+    currentTheme: typeof window !== 'undefined' && window.localStorage.getItem('themeColor') ? window.localStorage.getItem('themeColor') : 'dark'
   });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GlobalDispatchContext.Provider, {
     value: dispatch

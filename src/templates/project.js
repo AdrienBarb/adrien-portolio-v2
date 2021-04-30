@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar'
-import ProjectNavigation from '../components/ProjectNavigation'
 import {
   StyledProject,
   StyledProjectWrapper,
@@ -11,7 +10,7 @@ import { Helmet } from 'react-helmet'
 import { onNavigationEnter } from '../animations/onNavigation'
 
 const Project = ({ pageContext }) => {
-  const { article, prev, next } = pageContext
+  const { article } = pageContext
 
   useEffect(() => {
     onNavigationEnter()
@@ -27,20 +26,19 @@ const Project = ({ pageContext }) => {
       <StyledProjectWrapper className="animationOnNavigation">
         <StyledProject>
           <StyledVideoWrapper>
-            <img src={article.projectVideo.fluid.src} />
+            <img src={article.projectVideo.fluid.src} alt="Adrien Project"/>
           </StyledVideoWrapper>
           <StyledProjectDescription>
             <h1>{article.title}</h1>
             <p>{article.description?.description}</p>
             {article.website && (
-              <a href={article.website} target="_blank">
+              <a href={article.website} target="_blank" rel="noreferrer">
                 Visiter le site
               </a>
             )}
           </StyledProjectDescription>
         </StyledProject>
       </StyledProjectWrapper>
-      <ProjectNavigation prev={prev} next={next} />
     </div>
   )
 }

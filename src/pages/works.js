@@ -4,7 +4,6 @@ import { StyledWorksWrapper, StyledWork } from '../styles/worksPageStyles'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import { onNavigationEnter } from '../animations/onNavigation'
-import { handleNavigationLeave } from '../animations/onNavigation'
 
 const Works = () => {
   const data = useStaticQuery(graphql`
@@ -14,6 +13,7 @@ const Works = () => {
           node {
             title
             slug
+            website
           }
         }
       }
@@ -34,14 +34,14 @@ const Works = () => {
       <StyledWorksWrapper className="animationOnNavigation">
         {data.allContentfulProject.edges.map(({ node }, index) => {
           return (
-            <div onClick={() => handleNavigationLeave(`${node.slug}`)}>
+            <a href={node.website} target="_blank" rel="noreferrer" key={index}>
               <StyledWork>
                 <p>
                   <span>0{index}_</span>
                   {node.title}
                 </p>
               </StyledWork>
-            </div>
+            </a>
           )
         })}
       </StyledWorksWrapper>

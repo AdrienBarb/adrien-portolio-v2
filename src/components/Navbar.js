@@ -3,7 +3,6 @@ import { NavbarWrapper, NavbarStyle, Navlink } from '../styles/navbarStyles'
 import { Link } from 'gatsby'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Fullnav from './Fullnav'
-import { handleNavigationLeave } from '../animations/onNavigation'
 
 const Navbar = ({ nav }) => {
   const matches = useMediaQuery('(min-width:768px)')
@@ -11,29 +10,23 @@ const Navbar = ({ nav }) => {
   return (
     <NavbarWrapper ref={nav}  className="animationOnNavigation">
       <NavbarStyle >
-        <div className="navLink" onClick={() => handleNavigationLeave('')}>
+        <Link className="navLink" to={'/'}>
           ADRIEN BARBIER
-        </div>
+        </Link>
         {matches ? (
           <Navlink>
-            <div
+            <Link
               className="navLink"
-              onClick={() => handleNavigationLeave('services')}
+              to={'/services'}
             >
               SERVICES
-            </div>
-            <div
+            </Link>
+            <Link
               className="navLink"
-              onClick={() => handleNavigationLeave('works')}
+              to={'/works'}
             >
-              RÉALISATIONS
-            </div>
-            <div
-              className="navLink"
-              onClick={() => handleNavigationLeave('contact')}
-            >
-              CONTACT
-            </div>
+              WORKS
+            </Link>
           </Navlink>
         ) : (
           <Fullnav />

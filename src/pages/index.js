@@ -1,5 +1,5 @@
 import React from 'react'
-import Homepage from '../components/Homepage'
+import Homepage from '../components/Homepage/Homepage'
 import { Helmet } from "react-helmet"
 
 const index = () => {

@@ -1,5 +1,4 @@
 import gsap from 'gsap'
-import { navigate } from 'gatsby'
 
 export const onNavigationLeave = () => {
   const t1 = gsap.timeline()
@@ -19,13 +18,3 @@ export const onNavigationEnter = () => {
   })
 }
 
-export const handleNavigationLeave = (path) => {
-  let urlArray = window.location.href.split('/')
-  let currentPath = urlArray[urlArray.length - 1]
-  if (currentPath !== path) {
-    onNavigationLeave()
-    setTimeout(function () {
-      navigate(`/${path}`)
-    }, 800)
-  }
-}

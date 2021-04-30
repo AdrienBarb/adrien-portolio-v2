@@ -19,15 +19,15 @@ const Services = () => {
       <StyledServicesWrapper className="animationOnNavigation">
         <ServiceCard
           title="Conception"
-          description="La conception d’un produit est une étape primordiale. Elle permet de poser des bases solides, et d’anticiper au maximum les possibles futurs aléas du projet. C’est à cette étape qu’il faut se poser un maximum de questions afin de pouvoir cibler l’utilisateur, et développer une application ergonomique, intuitive, sur laquelle il pourra trouver rapidement l’information qu’il cherche."
+          description="The design of a product is an essential step. It makes it possible to lay solid foundations, and to anticipate as much as possible the possible future hazards of the project. It is at this stage that you have to ask yourself as many questions as possible in order to be able to target the user, and to develop an ergonomic, intuitive application on which he can quickly find the information he is looking for."
         />
         <ServiceCard
           title="Design"
-          description="Le design est la première interaction avec l’utilisateur, il doit donc être adapté et soigné pour que l’expérience utilisateur soit la meilleure possible. C’est aussi ce qui va vous différencier de vos concurrents, c’est en quelque sorte votre image de marque."
+          description="Design is the first interaction with the user, so it must be adapted and neat for the user experience to be the best possible. This is also what will differentiate you from your competitors, it is in a way your brand image."
         />
         <ServiceCard
-          title="Développement"
-          description="C’est à cette étape que le projet prend forme. Je m’adapte le plus possible à vos besoins en utilisant les technologies qui correspondent le mieux à vos projets. Le but étant de développer une application web ou un site internet facile d’utilisation pour vos utilisateurs comme pour vous !"
+          title="Development"
+          description="This is where the project takes shape. I adapt as much as possible to your needs by using the technologies that best suit your projects. The goal is to develop an easy-to-use web application or website for your users as well as for you!"
         />
       </StyledServicesWrapper>
     </div>
