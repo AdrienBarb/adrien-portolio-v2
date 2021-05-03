@@ -4,7 +4,7 @@ export const NavbarWrapper = styled.div`
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 1.6rem 2rem;
+  padding: 1.6rem 1rem;
   opacity: 0;
   z-index: 8000;
   box-sizing: border-box;
