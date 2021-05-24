@@ -1,22 +1,17 @@
 import React, { useEffect } from 'react'
-import Navbar from '../components/Navbar'
 import ServiceCard from '../components/ServiceCard'
 import { StyledServicesWrapper } from '../styles/servicesPageStyles'
 import { Helmet } from 'react-helmet'
-import { onNavigationEnter } from '../animations/onNavigation'
 
 const Services = () => {
-  useEffect(() => {
-    onNavigationEnter()
-  }, [])
+
   return (
     <div>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Adrien Barbier | Services</title>
       </Helmet>
-      <Navbar />
-      <StyledServicesWrapper className="animationOnNavigation">
+      <StyledServicesWrapper>
         <ServiceCard
           title="Conception"
           description="The design of a product is an essential step. It makes it possible to lay solid foundations, and to anticipate as much as possible the possible future hazards of the project. It is at this stage that you have to ask yourself as many questions as possible in order to be able to target the user, and to develop an ergonomic, intuitive application on which he can quickly find the information he is looking for."

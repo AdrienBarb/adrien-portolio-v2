@@ -1,14 +1,14 @@
 import React from 'react'
-import { NavbarWrapper, NavbarStyle, Navlink } from '../styles/navbarStyles'
+import { NavbarWrapper, NavbarStyle, Navlink } from '../../styles/navbarStyles'
 import { Link } from 'gatsby'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
-import Fullnav from './Fullnav'
+import Fullnav from '../Fullnav'
 
-const Navbar = ({ nav }) => {
+const Navbar = () => {
   const matches = useMediaQuery('(min-width:768px)')
 
   return (
-    <NavbarWrapper ref={nav}  className="animationOnNavigation">
+    <NavbarWrapper>
       <NavbarStyle >
         <Link className="navLink" to={'/'}>
           ADRIEN BARBIER

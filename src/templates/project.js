@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Navbar from '../components/Navbar'
 import {
   StyledProject,
   StyledProjectWrapper,
@@ -7,14 +6,9 @@ import {
   StyledVideoWrapper,
 } from '../styles/projectStyles'
 import { Helmet } from 'react-helmet'
-import { onNavigationEnter } from '../animations/onNavigation'
 
 const Project = ({ pageContext }) => {
   const { article } = pageContext
-
-  useEffect(() => {
-    onNavigationEnter()
-  }, [])
 
   return (
     <div>
@@ -22,8 +16,7 @@ const Project = ({ pageContext }) => {
         <meta charSet="utf-8" />
         <title>Adrien Barbier | {article.title}</title>
       </Helmet>
-      <Navbar />
-      <StyledProjectWrapper className="animationOnNavigation">
+      <StyledProjectWrapper>
         <StyledProject>
           <StyledVideoWrapper>
             <img src={article.projectVideo.fluid.src} alt="Adrien Project"/>

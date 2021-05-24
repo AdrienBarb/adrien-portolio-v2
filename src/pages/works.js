@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react'
-import Navbar from '../components/Navbar'
 import { StyledWorksWrapper, StyledWork } from '../styles/worksPageStyles'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import { onNavigationEnter } from '../animations/onNavigation'
 
 const Works = () => {
   const data = useStaticQuery(graphql`
@@ -20,18 +18,14 @@ const Works = () => {
     }
   `)
 
-  useEffect(() => {
-    onNavigationEnter()
-  }, [])
-
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Adrien Barbier | Réalisations</title>
       </Helmet>
-      <Navbar />
-      <StyledWorksWrapper className="animationOnNavigation">
+
+      <StyledWorksWrapper>
         {data.allContentfulProject.edges.map(({ node }, index) => {
           return (
             <a href={node.website} target="_blank" rel="noreferrer" key={index}>
