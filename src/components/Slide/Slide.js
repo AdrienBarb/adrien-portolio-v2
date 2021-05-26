@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledSlide } from '../styles/slideStyles'
+import { StyledSlide } from '../../styles/slideStyles'
 
 const Slide = ({ title, description, imgPath }) => {
   return (

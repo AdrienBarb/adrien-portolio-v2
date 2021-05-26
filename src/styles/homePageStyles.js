@@ -11,8 +11,8 @@ export const StyledMainSection = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 0 2rem;
-    max-width: 900px;
+    padding: 0 1rem;
+    max-width: 1000px;
     width: 100%;
     box-sizing: border-box;
     @media (max-width: 1024px) {
@@ -25,7 +25,7 @@ export const StyledMainSection = styled.div`
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 2.6rem;
       font-weight: 600;
     }
 

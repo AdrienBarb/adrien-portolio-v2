@@ -2,15 +2,17 @@ import styled from 'styled-components'
 
 export const IndexStyled = styled.div`
   .slide {
-    background-color: #1e5871;
     color: #f2ecde;
   }
 
-  .fp-prev {
-    border-color: transparent #f2ecde transparent transparent !important;
+  .fp-prev, .fp-next {
+    display: none
   }
-  
-  .fp-next {
-    border-color: transparent transparent transparent #f2ecde !important;
+
+  .fp-slidesContainer {
+    width: 300%;
+    transition: all 700ms ease 0s;
+    transform: translate3d(-${(props) => props.transformation}vw, 0px, 0px);
   }
+
 `

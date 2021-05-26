@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Homepage from '../components/Homepage/Homepage'
 import { Helmet } from 'react-helmet'
 import ReactFullpage from '@fullpage/react-fullpage'
-import Slide from '../components/Slide'
+import Slide from '../components/Slide/Slide'
 // @ts-ignore
 import website from '../images/website.svg'
 // @ts-ignore
@@ -10,32 +10,32 @@ import webApp from '../images/web-app.svg'
 // @ts-ignore
 import mvp from '../images/mvp.svg'
 import { IndexStyled } from '../styles/indexStyles'
+import SlideNavigation from '../components/Slide/SlideNavigation'
 
-const index = () => {
-  const onLeave = (origin, destination, direction) => {
-    console.log('Leaving section ' + origin.index)
-  }
-  const afterLoad = (origin, destination, direction) => {
-    console.log('After load: ' + destination.index)
-  }
+const Index = () => {
+  const anchors = ['Accueil', 'Mon offre', 'Services']
+  const [transformation, setTransformation] = useState(0)
+
+  console.log(transformation)
 
   return (
-    <IndexStyled>
+    <IndexStyled transformation={transformation}>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Adrien Barbier | Home</title>
       </Helmet>
       <ReactFullpage
+        navigation
+        navigationTooltips={anchors}
         scrollOverflow={true}
-        onLeave={onLeave}
-        afterLoad={afterLoad}
+        sectionsColor={['#F2ECDE', '#1E5871', '#F2ECDE']}
         render={({ state, fullpageApi }) => {
           return (
             <div id="fullpage-wrapper">
               <div className="section section1">
                 <Homepage />
               </div>
-              <div className="section">
+              <div className="section slide-section">
                 <div className="slide">
                   <Slide
                     title="Site Internet"
@@ -57,6 +57,7 @@ const index = () => {
                     imgPath={mvp}
                   />
                 </div>
+                <SlideNavigation transformation={transformation} setTransformation={setTransformation} />
               </div>
               <div className="section">
                 <h3>Section 3</h3>
@@ -72,4 +73,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
