@@ -4,7 +4,7 @@ export const StyledSlide = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  padding: 2rem;
+  padding: 2rem 2rem 4rem 2rem;
   box-sizing: border-box;
   max-width: 1400px;
   margin: 0 auto;
@@ -27,6 +27,7 @@ export const StyledSlide = styled.div`
   p {
     font-size: 1.6rem;
     font-family: 'Karla';
+    margin-top: 0.4rem;
     @media (max-width: 768px) {
       font-size: 1.2rem;
     }

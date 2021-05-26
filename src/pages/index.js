@@ -11,6 +11,7 @@ import webApp from '../images/web-app.svg'
 import mvp from '../images/mvp.svg'
 import { IndexStyled } from '../styles/indexStyles'
 import SlideNavigation from '../components/Slide/SlideNavigation'
+import Services from '../components/Services/Services'
 
 const Index = () => {
   const anchors = ['Accueil', 'Mon offre', 'Services']
@@ -60,10 +61,7 @@ const Index = () => {
                 <SlideNavigation transformation={transformation} setTransformation={setTransformation} />
               </div>
               <div className="section">
-                <h3>Section 3</h3>
-                <button onClick={() => fullpageApi.moveTo(1, 0)}>
-                  Move top
-                </button>
+                <Services />
               </div>
             </div>
           )

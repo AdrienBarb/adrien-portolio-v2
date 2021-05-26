@@ -53490,12 +53490,30 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
         background: ${props => props.theme.background};
         color: ${props => props.theme.text};
         overflow-x: hidden;
-        font-family: 'Roboto Mono';
+        font-family: 'Rubik';
     }
 
     a {
         text-decoration: none;
         color: inherit;
+    }
+
+    #fp-nav {
+        left: 17px !important;
+        bottom: -1rem;
+        top: inherit;
+        width: fit-content;
+
+    }
+    
+    #fp-nav ul li .fp-tooltip.fp-right {
+        left: 20px !important;
+        color: #1E5871 !important;
+        overflow: inherit;
+    }
+
+    #fp-nav ul li a span {
+        background: #e16f64;
     }
 `;
 const StyledLayout = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({

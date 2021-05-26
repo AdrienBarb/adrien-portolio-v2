@@ -1,45 +1,44 @@
 import styled from 'styled-components'
 
 export const StyledSlideNavigation = styled.div`
-  position: fixed;
-  bottom: 102vh;
-  left: 50%;
-  z-index: 10000;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  box-sizing: border-box;
 
-  .dot {
-    width: 6px;
-    height: 6px;
-    display: block;
-    background-color: #f2ecde;
+  .icon {
+    color: #f2ecde;
+    background: #1e5871;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
     border-radius: 50%;
+    z-index: 20000;
 
     &:hover {
+      color: #1e5871;
+      background: #f2ecde;
       cursor: pointer;
-      width: 10px;
-      height: 10px;
-      transition: .2s all;
+      transition: 0.6s all;
     }
   }
 
-  .active {
-    width: 12px;
-    height: 12px;
+  .left {
+    position: absolute;
+    left: 02rem;
+    bottom: 2rem;
   }
 
-  ul {
-    position: relative;
-    display: inline-flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    cursor: default;
-  }
-
-  li {
-    width: 22px;
-    height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .right {
+    position: absolute;
+    right: 02rem;
+    bottom: 2rem;
   }
 `

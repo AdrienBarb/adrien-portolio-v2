@@ -26,9 +26,10 @@ export const GlobalStyle = createGlobalStyle`
 
     #fp-nav {
         left: 17px !important;
-        bottom: -1rem;
-        top: inherit;
         width: fit-content;
+        @media (max-width: 768px) {
+            left: 6px !important;
+        }
 
     }
     

@@ -1,12 +1,12 @@
 import React from 'react'
-import { ServiceCardWrapper } from '../styles/serviceCardStyles'
+import { StyledServiceCard } from '../../styles/serviceCardStyles'
 
 const ServiceCard = ({ title, description }) => {
   return (
-    <ServiceCardWrapper>
+    <StyledServiceCard>
       <h1>{title}</h1>
       <p>{description}</p>
-    </ServiceCardWrapper>
+    </StyledServiceCard>
   )
 }
 
