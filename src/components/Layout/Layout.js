@@ -1,7 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, StyledLayout } from '../../styles/globalStyles'
-import Navbar from './Navbar'
 
 const lightTheme = {
   background: '#F2ECDE',
@@ -13,7 +12,6 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
-      <Navbar />
       <StyledLayout>{children}</StyledLayout>
     </ThemeProvider>
   )

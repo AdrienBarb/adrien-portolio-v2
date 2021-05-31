@@ -53500,9 +53500,10 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
 
     #fp-nav {
         left: 17px !important;
-        bottom: -1rem;
-        top: inherit;
         width: fit-content;
+        @media (max-width: 768px) {
+            left: 6px !important;
+        }
 
     }
     

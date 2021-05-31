@@ -12,6 +12,7 @@ import mvp from '../images/mvp.svg'
 import { IndexStyled } from '../styles/indexStyles'
 import SlideNavigation from '../components/Slide/SlideNavigation'
 import Services from '../components/Services/Services'
+import Navbar from '../components/Layout/Navbar'
 
 const Index = () => {
   const anchors = ['Accueil', 'Mon offre', 'Services']
@@ -34,6 +35,7 @@ const Index = () => {
           return (
             <div id="fullpage-wrapper">
               <div className="section section1">
+                <Navbar />
                 <Homepage />
               </div>
               <div className="section slide-section">
@@ -58,7 +60,10 @@ const Index = () => {
                     imgPath={mvp}
                   />
                 </div>
-                <SlideNavigation transformation={transformation} setTransformation={setTransformation} />
+                <SlideNavigation
+                  transformation={transformation}
+                  setTransformation={setTransformation}
+                />
               </div>
               <div className="section">
                 <Services />

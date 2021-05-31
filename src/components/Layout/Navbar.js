@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavbarWrapper, NavbarStyle, Navlink } from '../../styles/navbarStyles'
+import { NavbarWrapper } from '../../styles/navbarStyles'
 import { Link } from 'gatsby'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Fullnav from '../Fullnav'
@@ -9,29 +9,35 @@ const Navbar = () => {
 
   return (
     <NavbarWrapper>
-      <NavbarStyle >
-        <Link className="navLink" to={'/'}>
+      <div className="navbar" >
+        <Link className="home-link" to={'/'}>
           ADRIEN BARBIER
         </Link>
         {matches ? (
-          <Navlink>
+          <div className="nav-links">
             <Link
-              className="navLink"
-              to={'/services'}
+              className="nav-link"
+              to={'/about-me'}
             >
-              SERVICES
+              A PROPOS DE MOI
             </Link>
             <Link
-              className="navLink"
+              className="nav-link"
               to={'/works'}
             >
-              WORKS
+              MES RÉALISATIONS
             </Link>
-          </Navlink>
+            <Link
+              className="nav-link"
+              to={'/contact'}
+            >
+              ME CONTACTER
+            </Link>
+          </div>
         ) : (
           <Fullnav />
         )}
-      </NavbarStyle>
+      </div>
     </NavbarWrapper>
   )
 }
