@@ -34,8 +34,8 @@ const Works = () => {
       <Navbar />
 
       <StyledWorksWrapper>
-        {data.allContentfulProject.edges.map(({ node }) => {
-          return <WorkSection data={node} />
+        {data.allContentfulProject.edges.map(({ node }, index) => {
+          return <WorkSection data={node} index={index} />
         })}
       </StyledWorksWrapper>
     </>
