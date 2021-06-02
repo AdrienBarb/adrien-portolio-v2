@@ -1,18 +1,27 @@
 import styled from 'styled-components'
 
-export const ServiceCardWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+export const StyledServiceCard = styled.div`
+  background-color: #1e5871;
+  color: #f2ecde;
+  border-radius: 12px;
+  padding: 1rem;
+  position: relative;
 
   h1 {
-    margin: 0 0 0.4rem 0;
-    font-size: 16px;
-    font-weight: 700;
-    color: ${(props) => props.theme.gray};
+    color: #e16f64;
+    position: absolute;
+    top: -52px;
+    font-size: 2.6rem;
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+      top: -36px;
+    }
   }
 
   p {
-    margin: 0;
-    font-size: 16px;
+    font-size: 1.2rem;
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 `

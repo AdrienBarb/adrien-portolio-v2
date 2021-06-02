@@ -45,8 +45,9 @@ const FullNav = () => {
       </StyledHumburger>
       <StyledFullnavWrapper ref={fullNav}>
         <StyledFullnav>
-          <Link to="/services">SERVICES</Link>
-          <Link to="/works">WORKS</Link>
+          <Link to="/about-me">A PROPOS DE MOI</Link>
+          <Link to="/works">MES RÉALISATIONS</Link>
+          <Link to="/contact">ME CONTACTER</Link>
         </StyledFullnav>
       </StyledFullnavWrapper>
     </>

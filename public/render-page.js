@@ -142,7 +142,7 @@ var plugins = [{
   plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-google-fonts/gatsby-ssr */ "./node_modules/gatsby-plugin-google-fonts/gatsby-ssr.js"),
   options: {
     "plugins": [],
-    "fonts": ["Roboto Mono:200,300,400,500,600,700"],
+    "fonts": ["Rubik:300,400,500,600,700, 800, 900", "Karla:200,300,400,500,600,700, 800"],
     "display": "swap"
   }
 }, {
@@ -1617,7 +1617,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wrapRootElement", function() { return wrapRootElement; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _src_components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/components/Layout */ "./src/components/Layout.js");
+/* harmony import */ var _src_components_Layout_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./src/components/Layout/Layout */ "./src/components/Layout/Layout.js");
 /* harmony import */ var _src_context_globalContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/context/globalContext */ "./src/context/globalContext.js");
 
 
@@ -1625,7 +1625,7 @@ __webpack_require__.r(__webpack_exports__);
 const wrapRootElement = ({
   element
 }) => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_context_globalContext__WEBPACK_IMPORTED_MODULE_2__["GlobalProvider"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, element));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_context_globalContext__WEBPACK_IMPORTED_MODULE_2__["GlobalProvider"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_components_Layout_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, element));
 };
 
 /***/ }),
@@ -31803,10 +31803,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./src/components/Layout.js":
-/*!**********************************!*\
-  !*** ./src/components/Layout.js ***!
-  \**********************************/
+/***/ "./src/components/Layout/Layout.js":
+/*!*****************************************!*\
+  !*** ./src/components/Layout/Layout.js ***!
+  \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -31815,32 +31815,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.esm.js");
-/* harmony import */ var _context_globalContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/globalContext */ "./src/context/globalContext.js");
-/* harmony import */ var _styles_globalStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/globalStyles */ "./src/styles/globalStyles.js");
+/* harmony import */ var _styles_globalStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../styles/globalStyles */ "./src/styles/globalStyles.js");
 
 
 
-
-const darkTheme = {
-  background: '#121212',
-  text: '#fff',
-  gray: '#595E5F'
-};
 const lightTheme = {
-  background: '#fff',
-  text: '#121212',
+  background: '#F2ECDE',
+  text: '#1E5871',
   gray: '#595E5F'
 };
 
 const Layout = ({
   children
 }) => {
-  const {
-    currentTheme
-  } = Object(_context_globalContext__WEBPACK_IMPORTED_MODULE_2__["useGlobalStateContext"])();
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(styled_components__WEBPACK_IMPORTED_MODULE_1__["ThemeProvider"], {
-    theme: currentTheme === 'dark' ? darkTheme : lightTheme
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_globalStyles__WEBPACK_IMPORTED_MODULE_3__["GlobalStyle"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_globalStyles__WEBPACK_IMPORTED_MODULE_3__["StyledLayout"], null, children));
+    theme: lightTheme
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_globalStyles__WEBPACK_IMPORTED_MODULE_2__["GlobalStyle"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_globalStyles__WEBPACK_IMPORTED_MODULE_2__["StyledLayout"], null, children));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
@@ -31931,12 +31921,31 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["createGlobal
         background: ${props => props.theme.background};
         color: ${props => props.theme.text};
         overflow-x: hidden;
-        font-family: 'Roboto Mono';
+        font-family: 'Rubik';
     }
 
     a {
         text-decoration: none;
         color: inherit;
+    }
+
+    #fp-nav {
+        left: 17px !important;
+        width: fit-content;
+        @media (max-width: 768px) {
+            left: 6px !important;
+        }
+
+    }
+    
+    #fp-nav ul li .fp-tooltip.fp-right {
+        left: 20px !important;
+        color: #1E5871 !important;
+        overflow: inherit;
+    }
+
+    #fp-nav ul li a span {
+        background: #e16f64;
     }
 `;
 const StyledLayout = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({

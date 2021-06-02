@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import Navbar from '../components/Navbar'
 import { StyledWorksWrapper, StyledWork } from '../styles/worksPageStyles'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import { onNavigationEnter } from '../animations/onNavigation'
+import Navbar from '../components/Layout/Navbar'
+import WorkSection from '../components/WorkSection/WorkSection'
 
 const Works = () => {
   const data = useStaticQuery(graphql`
@@ -14,15 +14,16 @@ const Works = () => {
             title
             slug
             website
+            projectImage {
+              fluid(maxWidth: 980) {
+                ...GatsbyContentfulFluid
+              }
+            }
           }
         }
       }
     }
   `)
-
-  useEffect(() => {
-    onNavigationEnter()
-  }, [])
 
   return (
     <>
@@ -31,18 +32,10 @@ const Works = () => {
         <title>Adrien Barbier | Réalisations</title>
       </Helmet>
       <Navbar />
-      <StyledWorksWrapper className="animationOnNavigation">
-        {data.allContentfulProject.edges.map(({ node }, index) => {
-          return (
-            <a href={node.website} target="_blank" rel="noreferrer" key={index}>
-              <StyledWork>
-                <p>
-                  <span>0{index}_</span>
-                  {node.title}
-                </p>
-              </StyledWork>
-            </a>
-          )
+
+      <StyledWorksWrapper>
+        {data.allContentfulProject.edges.map(({ node }) => {
+          return <WorkSection data={node} />
         })}
       </StyledWorksWrapper>
     </>
