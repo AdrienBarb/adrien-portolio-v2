@@ -21,12 +21,18 @@ export const StyledMainSection = styled.div`
       left: 50%;
     }
     @media (max-width: 425px) {
-      padding: 0 1rem;
+      padding: 0 2rem;
     }
 
     h1 {
       font-size: 2.6rem;
       font-weight: 600;
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+      @media (max-width: 425px) {
+        font-size: 2rem;
+      }
     }
 
     .typing {

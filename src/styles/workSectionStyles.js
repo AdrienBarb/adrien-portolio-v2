@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
 export const StyledWorkSection = styled.div`
-  background-color: ${(props) => (props.isTrue ? '#F2ECDE' : '#1E5871')};
   height: 100vh;
   display: grid;
   place-items: center;
+  padding: 0 1rem;
+  text-align: center;
 
   .project-image-wrapper {
     max-width: 900px;
@@ -21,13 +22,29 @@ export const StyledWorkSection = styled.div`
     right: 0;
     top: 0;
     bottom: 0;
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      background: rgba(0, 0, 0, 0.2);
+    }
 
     h1 {
+      margin-top: 0;
       font-size: 5rem;
       left: 1rem;
       position: absolute;
       top: -200px;
       color: #e16f64;
+      @media (max-width: 768px) {
+        top: inherit;
+        left: inherit;
+        position: relative;
+      }
+      @media (max-width: 424px) {
+        font-size: 4rem;
+      }
     }
 
     .website-link {
@@ -39,6 +56,12 @@ export const StyledWorkSection = styled.div`
       padding: 0.8rem 1.6rem;
       border-radius: 24px;
       cursor: pointer;
+      @media (max-width: 768px) {
+        top: inherit;
+        left: inherit;
+        position: relative;
+      }
+
       a {
         position: absolute;
         left: 0;

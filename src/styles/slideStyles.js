@@ -31,6 +31,9 @@ export const StyledSlide = styled.div`
     @media (max-width: 768px) {
       font-size: 1.2rem;
     }
+    @media (max-width: 425px) {
+      font-size: 1rem;
+    }
   }
 
   .description {
@@ -59,6 +62,9 @@ export const StyledSlide = styled.div`
       position: relative;
       right: inherit;
       bottom: inherit;
+    }
+    @media (max-width: 425px) {
+      max-width: 80%;
     }
   }
 `

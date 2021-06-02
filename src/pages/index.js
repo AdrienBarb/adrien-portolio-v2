@@ -26,6 +26,7 @@ const Index = () => {
         <meta charSet="utf-8" />
         <title>Adrien Barbier | Home</title>
       </Helmet>
+
       <ReactFullpage
         navigation
         navigationTooltips={anchors}
@@ -49,7 +50,7 @@ const Index = () => {
                 <div className="slide">
                   <Slide
                     title="Application web"
-                    description="Avoir une presence en ligne en 2021 est un incontournable pour une entreprise/une marque. Que ce soit pour présentez les service de votre entreprise, ou le menu de votre restaurant."
+                    description="Une application web est une application pouvant être supportée par n’importe quelle navigateur, ce qui la rend facilement accessible depuis tout type de support (ordinateur, téléphone). Besoin de gérer des évènements? Des clients? Améliorer la production de votre atelier de fabrication? Une application web est une solution efficace !"
                     imgPath={webApp}
                   />
                 </div>
