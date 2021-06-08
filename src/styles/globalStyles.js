@@ -33,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
 
     }
     
-    #fp-nav ul li .fp-tooltip.fp-right {
+    #fp-nav ul li .fp-tooltip .fp-right {
         left: 20px !important;
         color: #1E5871 !important;
         overflow: inherit;

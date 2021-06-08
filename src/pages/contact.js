@@ -21,7 +21,7 @@ const Contact = () => {
             06 79 09 38 18
           </a>{' '}
           <br />
-          Je réponds généralement dans la journee !
+          Je réponds généralement dans la journée !
         </p>
       </div>
     </StyledContact>

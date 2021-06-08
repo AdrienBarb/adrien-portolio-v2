@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-export const IndexStyled = styled.div`
+export const IndexStyled = styled(motion.div)`
   .slide {
     color: #f2ecde;
   }

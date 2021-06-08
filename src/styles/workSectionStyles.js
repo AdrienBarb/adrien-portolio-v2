@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const StyledWorkSection = styled.div`
@@ -14,61 +15,48 @@ export const StyledWorkSection = styled.div`
     overflow: hidden;
     position: relative;
     border-radius: 24px;
+    opacity: 0.8;
+  }
+`
+
+export const StyledProjectInfo = styled(motion.div)`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: ${(props) => (props.matches ? 0 : 1)};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 768px) {
+    background: rgba(0, 0, 0, 0.2);
   }
 
-  .hover-info {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    @media (max-width: 768px) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-      background: rgba(0, 0, 0, 0.2);
+  h1 {
+    margin-top: 0;
+    font-size: 5rem;
+    color: #e16f64;
+    @media (max-width: 424px) {
+      font-size: 4rem;
     }
+  }
 
-    h1 {
-      margin-top: 0;
-      font-size: 5rem;
-      left: 1rem;
+  .website-link {
+    background-color: #e16f64;
+    color: white;
+    padding: 0.8rem 1.6rem;
+    border-radius: 24px;
+    cursor: pointer;
+    width: fit-content;
+
+    a {
       position: absolute;
-      top: -200px;
-      color: #e16f64;
-      @media (max-width: 768px) {
-        top: inherit;
-        left: inherit;
-        position: relative;
-      }
-      @media (max-width: 424px) {
-        font-size: 4rem;
-      }
-    }
-
-    .website-link {
-      background-color: #e16f64;
-      color: white;
-      position: absolute;
-      left: 1rem;
-      bottom: -100px;
-      padding: 0.8rem 1.6rem;
-      border-radius: 24px;
-      cursor: pointer;
-      @media (max-width: 768px) {
-        top: inherit;
-        left: inherit;
-        position: relative;
-      }
-
-      a {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-      }
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
     }
   }
 `

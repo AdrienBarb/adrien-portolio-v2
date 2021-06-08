@@ -21,7 +21,12 @@ const Index = () => {
   console.log(transformation)
 
   return (
-    <IndexStyled transformation={transformation}>
+    <IndexStyled
+      transformation={transformation}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.6 }}
+    >
       <Helmet>
         <meta charSet="utf-8" />
         <title>Adrien Barbier | Home</title>
@@ -43,21 +48,21 @@ const Index = () => {
                 <div className="slide">
                   <Slide
                     title="Site Internet"
-                    description="Avoir une presence en ligne en 2021 est un incontournable pour une entreprise/une marque. Que ce soit pour présentez les service de votre entreprise, ou le menu de votre restaurant."
+                    description="Avoir une présence en ligne en 2021 est devenu incontournable. Que ce soit pour présenter les services de votre entreprise, ou le menu de votre restaurant."
                     imgPath={website}
                   />
                 </div>
                 <div className="slide">
                   <Slide
-                    title="Application web"
-                    description="Une application web est une application pouvant être supportée par n’importe quelle navigateur, ce qui la rend facilement accessible depuis tout type de support (ordinateur, téléphone). Besoin de gérer des évènements? Des clients? Améliorer la production de votre atelier de fabrication? Une application web est une solution efficace !"
+                    title="Application Web"
+                    description="Une application web est une application pouvant être supportée par n’importe quel navigateur, ce qui la rend facilement accessible depuis tout type de support (ordinateur, téléphone). Besoin de gérer des évènements? Des clients? Améliorer la production de votre atelier de fabrication? Une application web est une solution efficace !"
                     imgPath={webApp}
                   />
                 </div>
                 <div className="slide">
                   <Slide
                     title="MVP"
-                    description="Faire développer un MVP (Produit Minimum Viable en français) vous permettra de confronter votre produit à vos clients le plus rapidement possible. Le but ? Récolter des avis sur les différentes fonctionnalités pour améliorer votre produits. Beaucoup d’entrepreneurs passe par la case MVP avant de développer la version Bêta de leur application."
+                    description="Faire développer un MVP (Produit Minimum Viable en français) vous permettra de confronter votre produit à vos clients le plus rapidement possible. Le but ? Récolter des avis sur les différentes fonctionnalités et améliorer votre produit. Beaucoup d’entrepreneurs passent par la case MVP avant de développer la version Bêta de leur application."
                     imgPath={mvp}
                   />
                 </div>
