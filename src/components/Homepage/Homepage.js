@@ -15,12 +15,12 @@ const Homepage = () => {
           J’accompagne les{' '}
           <span className="typing">
             <ReactTypingEffect
-              text={['entrepeneurs', 'entreprises', 'marques']}
+              text={['entrepreneurs', 'entreprises', 'marques']}
               eraseDelay={2000}
             />
           </span>
           <br />
-          dans la realisation de leurs projets digitaux.
+          dans la réalisation de leurs projets digitaux.
         </h1>
       </div>
     </StyledMainSection>
